@@ -1,16 +1,21 @@
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
-const div = document.querySelector("#resultado-div");
 
-form.addEventListener("submit", (event) => {
+
+//VISTAS
+
+const vistaModalidades = document.querySelector("#vista-modalidades");
+const vistaCampoJuego = document.querySelector("#vista-campo-juego");
+
+
+//FORMULARIOS
+const formJuegoRapido = document.querySelector("#juego-rapido-form");
+
+
+//EVENTOS
+formJuegoRapido.addEventListener("submit", (event) => {
   event.preventDefault();
 
+  vistaModalidades.style.display = "none";
+  vistaCampoJuego.style.display = "block";
 
-  
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
 });
