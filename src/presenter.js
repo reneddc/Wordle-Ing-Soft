@@ -1,5 +1,8 @@
-import obtenerPalabrasSeleccionables from "./wordle"
+import Wordle from "./wordle"
 
+//Clases
+
+let wordle = new Wordle();
 
 //VISTAS
 
@@ -15,8 +18,11 @@ const formJuegoRapido = document.querySelector("#juego-rapido-form");
 formJuegoRapido.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  let listaPalabrasSeleccionables = obtenerPalabrasSeleccionables();
-  alert(listaPalabrasSeleccionables);
+  let listaPalabrasSeleccionables = wordle.obtenerPalabrasSeleccionables();
+  alert("Lista de Palabras Seleccionables: " + listaPalabrasSeleccionables);
+
+  let palabraSecreta = wordle.obtenerPalabraSecreta();
+  alert("Palabra Secreta: " + palabraSecreta);
 
   vistaModalidades.style.display = "none";
   vistaCampoJuego.style.display = "block";
