@@ -9,10 +9,9 @@ describe("F. DEFINIR MODALIDADES DE JUEGO", () => {
   it("1. Si se presiona el botón “Juego Rápido” se debería borrar la vista “Modalidades” y mostrar la vista “Campo de Juego”" , () => {});
 
   //HDU 3
-  it("1. Crear y mostrar una palabra seleccionable para jugar" , () => {
+  it("1. Si se presiona el botón “Juego Rápido” y la palabra creada por el juego fue <HOLA>, debería mostrar un mensaje de texto con la palabra <HOLA>" , () => {
     expect(definirPalabrasSeleccionables()).toEqual("HOJA");
   });
-
 });
 
 
