@@ -1,14 +1,17 @@
 <html>
   <body>
-    <h1>Sumador</h1>
-    <form id="sumar-form">
-      <label for="primer-numero">Primer número:</label>
-      <input type="number" id="primer-numero" />
-      <label for="segundo-numero">Segundo número:</label>
-      <input type="number" id="segundo-numero" />
-      <input type="submit" value="Sumar" />
+    <h1>WORDLE</h1>
+    <h2>Modalidades de Juego</h2><br>
+
+    <form id="juego-rapido-form">
+
+      <div id="descripcion-juego-rapido">
+        <h2> Juego Rápido </h2>
+        <h5> Adivinar una palabra cualquiera elegida al azar </h5>
+      </div>
+
+      <input type="submit" value="Juego Rápido" />
     </form>
-    <div id="resultado-div"></div>
 
     <script type="module" src="./src/presenter.js"></script>
   </body>
