@@ -1,4 +1,4 @@
-
+import definirPalabrasSeleccionables from "./wordle"
 
 
 describe("F. DEFINIR MODALIDADES DE JUEGO", () => {
@@ -10,12 +10,10 @@ describe("F. DEFINIR MODALIDADES DE JUEGO", () => {
 
   //HDU 3
   it("1. Crear y mostrar una palabra seleccionable para jugar" , () => {
-    expect(definirPalabrasSeleccionables("HOJA")).toEqual("HOJA");
+    expect(definirPalabrasSeleccionables()).toEqual("HOJA");
   });
 
 });
 
-function definirPalabrasSeleccionables(palabraSeleccionable){
-  return palabraSeleccionable;
-}
+
 
