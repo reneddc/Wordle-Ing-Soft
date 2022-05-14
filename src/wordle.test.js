@@ -12,6 +12,11 @@ describe("F. DEFINIR MODALIDADES DE JUEGO", () => {
   it("1. Si se presiona el botón “Juego Rápido” y la palabra creada por el juego fue <HOLA>, debería mostrar un mensaje de texto con la palabra <HOLA>" , () => {
     expect(definirPalabrasSeleccionables()).toEqual("HOJA");
   });
+
+  //HDU 4
+  it("1. Si se presiona el botón “Juego Rápido” y la lista de palabras creadas por el juego fue <HOLA, HIJA, DUKE>, debería mostrar un mensaje de texto con las palabras <HOLA, HIJA, DUKE>" , () => {
+    expect(definirPalabrasSeleccionables()).toEqual(["HOLA", "HOLA", "LOBO", "COLA", "PALO", "CINCO", "CIRCO", "PERRO", "DUKE"]);
+  });
 });
 
 
