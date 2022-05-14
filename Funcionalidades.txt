@@ -1,0 +1,45 @@
+B. VER PANTALLA PRINCIPAL (JUGADOR)
+
+    HDU 1: Presionar el botón de “Juego Rápido” y enviar a la vista “Campo de Juego”
+        TESTS:
+        (UI)1.1. Si presiono el botón “Juego Rápido” se debería borrar la vista “Página Principal” y mostrar la vista “Campo de Juego”.
+
+    HDU 2: Presionar el botón de “Tutorial” y enviar a la vista “Tutorial”
+        TESTS:
+        (UI)2.1. Si presiono el botón “Tutorial” se debería borrar la vista “Página Principal” y mostrar la vista “Tutorial”.
+
+D. VER TUTORIAL
+
+    HDU 1: Presionar el botón de “Tutorial” y enviar a la vista “Tutorial”
+        TESTS:
+        (UI)1.1. En la vista “Tutorial” debería visualizarse la descripción del juego: “El juego consiste en adivinar una palabra que el juego elige al azar…..”
+
+    HDU 2: Mostrar los pasos del juego.
+        TESTS:
+        (UI)2.1. En la vista “Tutorial” debería visualizarse los pasos del juego: Paso 1: Elegir una modalidad de juego, Paso 2: Ingresar una palabra real como intento, Paso 3: Ver las pistas del intento anterior…………
+
+F. DEFINIR MODALIDADES DE JUEGO
+
+    HDU 1: Mostrar descripción de la modalidad de “Juego Rápido” 
+        TESTS:
+        (UI)1.1. En la vista “Modalidades de Juego” debería mostrar la descripción de la modalidad “Juego Rápido”: “Adivinar una palabra cualquiera elegida al azar.”
+
+    HDU 2: Presionar botón de “Juego Rápido” y enviar a la vista “Campo de Juego” 
+        TESTS:
+        (UI)2.1. Si se presiona el botón “Juego Rápido” se debería borrar la vista “Modalidades” y mostrar la vista “Campo de Juego”.
+
+    HDU 3: Crear y mostrar una palabra seleccionable para jugar
+        TESTS:
+        (UI)3.1. Si se presiona el botón “Juego Rápido” y la palabra creada por el juego fue <HOLA>, debería mostrar un mensaje de texto con la palabra <HOLA>.
+
+    HDU 4: Crear y mostrar una lista de palabras seleccionables para jugar
+        TESTS:
+        (UI)4.1. Si se presiona el botón “Juego Rápido” y la lista de palabras creadas por el juego fue <HOLA, HIJA, DUKE>, debería mostrar un mensaje de texto con las palabras <HOLA, HIJA, DUKE>.
+
+    HDU 5: Seleccionar y mostrar la primera palabra de la lista que será la “Palabra Secreta” a adivinar
+        TESTS:
+        (UI)5.1. Si se presiona el botón “Juego Rápido” y la lista de palabras creada por el juego fue <HOLA, HIJA, DUKE>, debería definirse como “Palabra Secreta” a <HOLA> y mostrarla en pantalla.
+
+    HDU 6: Seleccionar al azar y mostrar una palabra de la lista que será la “Palabra Secreta” a adivinar
+        TESTS:
+        (UI)6.1. Si se presiona el botón “Juego Rápido” y la lista de palabras creada por el juego fue <HOLA, HIJA, DUKE>, debería definirse al azar la “Palabra Secreta” y mostrarla. Ejm: Si se elige al azar la palabra <DUKE>, se debería establecer como la “Palabra Secreta” la palabra <DUKE> y mostrarse en pantalla.
