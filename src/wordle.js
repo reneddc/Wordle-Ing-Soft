@@ -9,7 +9,8 @@ class Wordle{
     }
     
     obtenerPalabraSecreta(){
-        return this.palabrasSeleccionables[0];
+        let posicion = Math.floor(Math.random() * this.palabrasSeleccionables.length);
+        return this.palabrasSeleccionables[posicion];
     }
 }
 export default Wordle;

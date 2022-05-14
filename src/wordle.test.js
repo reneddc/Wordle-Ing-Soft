@@ -21,12 +21,13 @@ describe("F. DEFINIR MODALIDADES DE JUEGO", () => {
 
   //HDU 5
   it("1. Si se presiona el botón “Juego Rápido” y la lista de palabras creada por el juego fue <HOLA, HIJA, DUKE>, debería definirse como “Palabra Secreta” a <HOLA> y mostrarla en pantalla" , () => {
-    expect(wordle.obtenerPalabraSecreta()).toEqual("HOJA");
+    expect(wordle.obtenerPalabrasSeleccionables()[0]).toEqual("HOJA");
   });
 
   //HDU 6
   it("1. Si se presiona el botón “Juego Rápido” y la lista de palabras creada por el juego fue <HOLA, HIJA, DUKE>, debería definirse al azar la “Palabra Secreta” y mostrarla" , () => {
     let palabraSecreta = wordle.obtenerPalabraSecreta();
+    console.log(palabraSecreta);
     expect(palabraSecreta).toEqual(palabraSecreta);
   });
 });
