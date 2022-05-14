@@ -26,6 +26,7 @@ describe("F. DEFINIR MODALIDADES DE JUEGO", () => {
 
   //HDU 6
   it("1. Si se presiona el botón “Juego Rápido” y la lista de palabras creada por el juego fue <HOLA, HIJA, DUKE>, debería definirse al azar la “Palabra Secreta” y mostrarla" , () => {
+    wordle.definirPalabraSecreta();
     let palabraSecreta = wordle.obtenerPalabraSecreta();
     console.log(palabraSecreta);
     expect(palabraSecreta).toEqual(palabraSecreta);

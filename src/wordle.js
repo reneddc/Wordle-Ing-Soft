@@ -1,16 +1,21 @@
+import FuncionesWordle from "./funcionesWordle";
 
 class Wordle{
     constructor(){
-        this.palabrasSeleccionables = ["HOJA", "HOLA", "LOBO", "COLA", "PALO", "CINCO", "CIRCO", "PERRO", "DUKE"];
+        this.palabraSecreta;
+        this.funionesWordle = new FuncionesWordle();
     }
 
-    obtenerPalabrasSeleccionables(){
-        return this.palabrasSeleccionables;
+    definirPalabraSecreta(){
+        this.palabraSecreta = this.funionesWordle.definirPalabraSecretaAlAzar();
     }
     
     obtenerPalabraSecreta(){
-        let posicion = Math.floor(Math.random() * this.palabrasSeleccionables.length);
-        return this.palabrasSeleccionables[posicion];
+        return this.palabraSecreta;
+    }
+
+    obtenerPalabrasSeleccionables(){
+        return this.funionesWordle.obtenerListaPalabras();
     }
 }
 export default Wordle;
