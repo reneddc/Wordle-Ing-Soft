@@ -15,5 +15,7 @@ describe("F. DEFINIR MODALIDADES DE JUEGO", () => {
 
 });
 
-
+function definirPalabrasSeleccionables(palabraSeleccionable){
+  return palabraSeleccionable;
+}
 
