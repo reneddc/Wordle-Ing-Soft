@@ -1,8 +1,8 @@
 
 const palabraSeleccionable = ["HOJA", "HOLA", "LOBO", "COLA", "PALO", "CINCO", "CIRCO", "PERRO", "DUKE"];
 
-function definirPalabrasSeleccionables(){
+function obtenerPalabrasSeleccionables(){
     return palabraSeleccionable;
 }
 
-export default definirPalabrasSeleccionables;
+export default obtenerPalabrasSeleccionables;

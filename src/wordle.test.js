@@ -1,4 +1,4 @@
-import definirPalabrasSeleccionables from "./wordle"
+import obtenerPalabrasSeleccionables from "./wordle"
 
 
 describe("F. DEFINIR MODALIDADES DE JUEGO", () => {
@@ -10,12 +10,12 @@ describe("F. DEFINIR MODALIDADES DE JUEGO", () => {
 
   //HDU 3
   it("1. Si se presiona el botón “Juego Rápido” y la palabra creada por el juego fue <HOLA>, debería mostrar un mensaje de texto con la palabra <HOLA>" , () => {
-    expect(definirPalabrasSeleccionables()[0]).toEqual("HOJA");
+    expect(obtenerPalabrasSeleccionables()[0]).toEqual("HOJA");
   });
 
   //HDU 4
   it("1. Si se presiona el botón “Juego Rápido” y la lista de palabras creadas por el juego fue <HOLA, HIJA, DUKE>, debería mostrar un mensaje de texto con las palabras <HOLA, HIJA, DUKE>" , () => {
-    expect(definirPalabrasSeleccionables()).toEqual(["HOJA", "HOLA", "LOBO", "COLA", "PALO", "CINCO", "CIRCO", "PERRO", "DUKE"]);
+    expect(obtenerPalabrasSeleccionables()).toEqual(["HOJA", "HOLA", "LOBO", "COLA", "PALO", "CINCO", "CIRCO", "PERRO", "DUKE"]);
   });
 });
 

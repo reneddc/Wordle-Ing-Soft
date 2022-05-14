@@ -1,4 +1,4 @@
-import definirPalabrasSeleccionables from "./wordle"
+import obtenerPalabrasSeleccionables from "./wordle"
 
 
 //VISTAS
@@ -15,8 +15,9 @@ const formJuegoRapido = document.querySelector("#juego-rapido-form");
 formJuegoRapido.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  let palabraSeleccionable = definirPalabrasSeleccionables();
-  alert(palabraSeleccionable);
+  let listaPalabrasSeleccionables = obtenerPalabrasSeleccionables();
+  alert(listaPalabrasSeleccionables);
+
   vistaModalidades.style.display = "none";
   vistaCampoJuego.style.display = "block";
 
