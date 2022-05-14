@@ -1,4 +1,4 @@
-import obtenerPalabrasSeleccionables from "./wordle"
+import {obtenerPalabrasSeleccionables, obtenerPalabraSecreta} from "./wordle"
 
 
 describe("F. DEFINIR MODALIDADES DE JUEGO", () => {
