@@ -1,12 +1,15 @@
 
-const palabrasSeleccionables = ["HOJA", "HOLA", "LOBO", "COLA", "PALO", "CINCO", "CIRCO", "PERRO", "DUKE"];
+class Wordle{
+    constructor(){
+        this.palabrasSeleccionables = ["HOJA", "HOLA", "LOBO", "COLA", "PALO", "CINCO", "CIRCO", "PERRO", "DUKE"];
+    }
 
-function obtenerPalabrasSeleccionables(){
-    return palabrasSeleccionables;
+    obtenerPalabrasSeleccionables(){
+        return this.palabrasSeleccionables;
+    }
+    
+    obtenerPalabraSecreta(){
+        return this.palabrasSeleccionables[0];
+    }
 }
-
-function obtenerPalabraSecreta(){
-    return palabrasSeleccionables[0];
-}
-
-export {obtenerPalabrasSeleccionables, obtenerPalabraSecreta}
+export default Wordle;
