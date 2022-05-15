@@ -104,6 +104,15 @@ describe("G. INGRESAR INTENTOS", () => {
     expect(nroIntentos).toEqual(0);
   });
 
+  it("2. Si se ingresó otro intento <HOLA>, debería mostrarse la lista de intentos como <HOLA, “”, “”, “”, “”, “”> y el contador de intentos igual a 1" , () => {
+    wordleG.definirPalabraSecreta();
+    wordleG.definirIntento("HOLA");
+    let listaIntentos = wordleG.obtenerHistorialIntentos();
+    let nroIntentos = wordleG.obtenerNroIntentos();
+    expect(listaIntentos).toEqual(["HOLA", "X", "X", "X", "X", "X"]);
+    expect(nroIntentos).toEqual(1);
+  });
+
 });
 
 
