@@ -5,6 +5,7 @@ class Wordle{
         this.palabraSecreta;
         this.tamPalabraSecreta;
         this.intento;
+        this.historialIntentos = [];
         this.funcionesWordle = new FuncionesWordle();
     }
 
@@ -19,10 +20,15 @@ class Wordle{
 
     definirIntento(intentoPalabra){
         this.intento = this.funcionesWordle.definirIntento(intentoPalabra, this.tamPalabraSecreta);
+        this.historialIntentos = this.funcionesWordle.definirHistorialIntentos();
     }
 
     obtenerIntento(){
         return this.intento;
+    }
+
+    obtenerHistorialIntentos(){
+        return this.historialIntentos;
     }
     
     obtenerPalabraSecreta(){

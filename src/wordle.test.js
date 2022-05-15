@@ -79,7 +79,7 @@ describe("G. INGRESAR INTENTOS", () => {
     wordleG.definirPalabraSecreta();
     wordleG.definirIntento("HOLA");
     wordleG.definirIntento("COLA");
-    let listaIntentos = wordleG.obtenerListaIntentos();
+    let listaIntentos = wordleG.obtenerHistorialIntentos();
     expect(listaIntentos).toEqual(["HOLA", "COLA"]);
   });
 
