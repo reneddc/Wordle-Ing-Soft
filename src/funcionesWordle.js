@@ -64,10 +64,10 @@ class FuncionesWordle{
     definirIntento(intento, tamPalabraSecreta){
         try{
             if(this.nroIntentos < 6){
+                this.generarResultadoVacio(tamPalabraSecreta);
                 this.esIntentoIncompleto(intento, tamPalabraSecreta);
                 this.esIntentoPermitido(intento);
                 this.agregarIntentoHistorial(intento);
-                this.generarResultadoVacio(tamPalabraSecreta);
             }
         }
         catch(err){

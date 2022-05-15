@@ -151,19 +151,27 @@ describe("H. MOSTRAR PISTAS", () => {
   let wordleH = new Wordle();
   
   //HDU 1
-  it("1.Ingresar un intento y que muestre una “Cadena Resultado” de caracteres del tamaño del intento con el símbolo <o>.", ()=> {
-    wordleH.definirPalabraSecreta();
+  it("1. Ingresar un intento y que muestre una “Cadena Resultado” de caracteres del tamaño del intento con el símbolo <o>.", ()=> {
+    wordleH.definirSecreta("CRIL");
     wordleH.definirIntento("HOLA");
     let cadena_resultado = wordleH.obtenerCadenaResultado();
     expect(cadena_resultado).toEqual("oooo");
   });
 
   //HDU 2
-  it("Ingresar un intento y mostrar una “Cadena Resultado” con la misma cantidad de caracteres, con la primera posición igual a <z>, si la primera letra de la palabra secreta es igual a la primera letra del intento y el resto de caracteres iguales a <o>.", ()=> {
+  it("2. Ingresar un intento y mostrar una “Cadena Resultado” con la misma cantidad de caracteres, con la primera posición igual a <z>, si la primera letra de la palabra secreta es igual a la primera letra del intento y el resto de caracteres iguales a <o>.", ()=> {
     wordleH.definirSecreta("CRIL");
     wordleH.definirIntento("COLA");
     let cadena_resultado = wordleH.obtenerCadenaResultado();
     expect(cadena_resultado).toEqual("zooo");
+  });
+
+  //HDU 2
+  it("3. Ingresar un intento y mostrar una “Cadena Resultado” con las posiciones iguales a <z>, si las letras y sus posiciones de la palabra secreta son iguales a las letras y sus posiciones del intento,  el resto de caracteres iguales a <o>.", ()=> {
+    wordleH.definirSecreta("CRIA");
+    wordleH.definirIntento("COLA");
+    let cadena_resultado = wordleH.obtenerCadenaResultado();
+    expect(cadena_resultado).toEqual("zooz");
   });
 
 });

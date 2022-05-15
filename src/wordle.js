@@ -33,6 +33,7 @@ class Wordle{
         this.intento = this.funcionesWordle.definirIntento(intentoPalabra, this.tamPalabraSecreta);
         this.historialIntentos = this.funcionesWordle.definirHistorialIntentos();
         this.nroIntentos = this.funcionesWordle.definirNroIntentos();
+        this.funcionesWordle.definirCadenaResultado(this.palabraSecreta,this.intento);
     }
 
 
@@ -57,7 +58,6 @@ class Wordle{
     }
     
     obtenerCadenaResultado(){
-        this.funcionesWordle.definirCadenaResultado(this.palabraSecreta,this.intento);
         return this.funcionesWordle.obtenerCadenaResultado();
     }
 }
