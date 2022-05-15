@@ -22,11 +22,14 @@ function generarHtmlHistorialIntentos(tamPalabraSecreta, historialIntentos, list
         for(let col = 0; col < tamPalabraSecreta; col++){
             if (intento != "X"){
                 if(pista[col] == "z"){
-                    codigoInputs = `<input style="background-color: rgb(18, 156, 235); type="text" class="historial-intento fila-${fila+1}" size="1" maxlength="1" value="${intento[col]}" disabled>`;
+                    codigoInputs = `<input style="background-color: rgb(18, 156, 235);text-align: center" type="text" class="historial-intento fila-${fila+1}" size="1" maxlength="1" value="${intento[col]}" disabled>`;
                 }
-                else{
-                    codigoInputs = `<input type="text" class="historial-intento fila-${fila+1}" size="1" maxlength="1" value="${intento[col]}" disabled>`; 
-                }           
+                if(pista[col] == "a"){
+                    codigoInputs = `<input style="background-color: rgb(255, 226, 89);text-align: center" type="text" class="historial-intento fila-${fila+1}" size="1" maxlength="1" value="${intento[col]}" disabled>`;
+                }
+                if(pista[col] == "o"){
+                    codigoInputs = `<input style="background-color: rgb(194, 192, 192);text-align: center" type="text" class="historial-intento fila-${fila+1}" size="1" maxlength="1" value="${intento[col]}" disabled>`; 
+                }       
             }
             else{
                 codigoInputs = `<input type="text" class="historial-intento fila-${fila+1}" size="1" maxlength="1" disabled>`;
