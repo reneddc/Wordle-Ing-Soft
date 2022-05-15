@@ -8,8 +8,8 @@ class FuncionesWordle{
     }
 
     definirPalabraSecretaAlAzar(){
-        let posicion = Math.floor(Math.random() * this.tamPalabrasSeleccionables);
         this.limpiarListaIntentos();
+        let posicion = Math.floor(Math.random() * this.tamPalabrasSeleccionables);
         return this.palabrasSeleccionables[posicion]
     }
 
