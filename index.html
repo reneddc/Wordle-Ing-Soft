@@ -1,28 +1,57 @@
 <html>
   <body>
     <h1>WORDLE</h1>
+  <div id="vista-Principal">
 
-    <div id="vista-modalidades">
-        <h2>Modalidades de Juego</h2><br>
+      <h2>Pagina Principal</h2><br>
 
-        <form id="juego-rapido-form">
-            <div id="descripcion-juego-rapido">
-                <h2> Juego Rápido </h2>
-                <h5> Adivinar una palabra cualquiera elegida al azar </h5>
-            </div>
+        <form id="juego-rapido-form-principal">
+          <div id="descripcion-juego-rapido-principal">
+            <h2> Juego Rápido </h2>
+            <h5> Adivinar una palabra cualquiera elegida al azar </h5>
+          </div>
             <input type="submit" value="Juego Rápido" />
         </form>
-    </div>
-    
 
-    <div id="vista-campo-juego" style="display: none;">
-        <h2 id="titulo-campo-juego">Campo de Juego</h2><br>
-        <div id="intentos-realizados"></div>
-        <form id="historial-intentos-form"></form>
-        <form id="ingresar-intento-form"></form>
-    </div>
+        <form id="modalidades-form">
+          <div id="descripcion-modalidades">
+            <h2> Modalidades </h2>
+            <h5> Explora las diferentes modalidades de juego </h5>
+          </div>
+            <input type="submit" value="Modalidades" />
+        </form>
 
+        <form id="tutorial-form">
+          <div id="descripcion-tutorial">
+            <h2> Tutorial </h2>
+            <h5> Aprende a jugar </h5>
+          </div>
+            <input type="submit" value="Tutorial" />
+        </form>
+  </div>
+ 
+  <div id="vista-campo-juego" style="display: none;">
+      <h2 id="titulo-campo-juego">Campo de Juego</h2><br>
+      <div id="intentos-realizados"></div>
+      <form id="historial-intentos-form"></form>
+      <form id="ingresar-intento-form"></form>
+  </div>
 
-    <script type="module" src="./src/presenter.js"></script>
+  <div id="vista-tutorial" style="display: none;">
+    <h2 id="titulo-tutorial">Tutorial</h2><br>
+  </div>
+   
+  <div id="vista-modalidades" style = "display: none;">
+    <h2>Modalidades de Juego</h2><br>
+    <form id="juego-rapido-form">
+        <div id="descripcion-juego-rapido">
+          <h2> Juego Rápido </h2>
+          <h5> Adivinar una palabra cualquiera elegida al azar </h5>
+        </div>
+          <input type="submit" value="Juego Rápido" />
+    </form>
+  </div>
+
+  <script type="module" src="./src/presenter.js"></script>
   </body>
 </html>
