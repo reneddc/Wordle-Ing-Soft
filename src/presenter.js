@@ -66,7 +66,8 @@ function mostrarIntentosRealizados(){
 }
 
 function refrescarHistorialIntentos(){
-  formHistorialIntentos.innerHTML = generarHtmlHistorialIntentos(tamPalabraSecreta, listaIntentos);
+  let listaPistas = wordle.obtenerListaPistas();
+  formHistorialIntentos.innerHTML = generarHtmlHistorialIntentos(tamPalabraSecreta, listaIntentos, listaPistas);
 }
 
 

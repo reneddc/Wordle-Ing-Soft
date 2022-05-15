@@ -6,6 +6,7 @@ class Wordle{
         this.tamPalabraSecreta;
         this.intento;
         this.historialIntentos = [];
+        this.listaPistas = [];
         this.nroIntentos;
         this.funcionesWordle = new FuncionesWordle();
         this.cadenaResultado;
@@ -15,6 +16,7 @@ class Wordle{
         this.palabraSecreta = this.funcionesWordle.definirPalabraSecretaAlAzar();
         this.definirTamPalabraSecreta();
         this.historialIntentos = this.funcionesWordle.definirHistorialIntentos();
+        this.listaPistas = this.funcionesWordle.definirListaPistas();
         this.nroIntentos = this.funcionesWordle.definirNroIntentos();
     }
 
@@ -22,6 +24,7 @@ class Wordle{
         this.palabraSecreta = this.funcionesWordle.definirPalabraSecreta(palabra);
         this.definirTamPalabraSecreta();
         this.historialIntentos = this.funcionesWordle.definirHistorialIntentos();
+        this.listaPistas = this.funcionesWordle.definirListaPistas();
         this.nroIntentos = this.funcionesWordle.definirNroIntentos();
     }
 
@@ -58,6 +61,10 @@ class Wordle{
     
     obtenerCadenaResultado(){
         return this.funcionesWordle.obtenerCadenaResultado();
+    }
+
+    obtenerListaPistas(){
+        return this.listaPistas;
     }
 }
 export default Wordle;

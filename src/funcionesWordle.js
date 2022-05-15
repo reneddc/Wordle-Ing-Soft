@@ -5,6 +5,7 @@ class FuncionesWordle{
         this.palabrasSeleccionables = ["HOJA", "HOLA", "LOBO", "COLA", "PALO", "PICO", "COCA", "PERO", "DUKE"];
         this.tamPalabrasSeleccionables = this.palabrasSeleccionables.length;
         this.listaIntentos = ["X", "X", "X", "X", "X", "X"];
+        this.listaPistas = ["X", "X", "X", "X", "X", "X"];
         this.nroIntentos;
         this.cadenaResultado;
         this.copiaPalabraSecreta = [""];
@@ -34,6 +35,7 @@ class FuncionesWordle{
 
     limpiarListaIntentos(){
         this.listaIntentos = ["X", "X", "X", "X", "X", "X"];
+        this.listaPistas= ["X", "X", "X", "X", "X", "X"];
         this.nroIntentos = 0;
     }
 
@@ -86,6 +88,10 @@ class FuncionesWordle{
         return this.nroIntentos;
     }
 
+    definirListaPistas(){
+        return this.listaPistas;
+    }
+
     definirAzules(palabraSecreta, intento){
         for(let i = 0; i < palabraSecreta.length; i++){
             if(intento[i] == palabraSecreta[i]){
@@ -109,6 +115,10 @@ class FuncionesWordle{
     concatenarResultado(){
         this.cadenaResultado = this.cadenaResultado.join("");
     }
+
+    agregarPista(){
+        this.listaPistas[this.nroIntentos-1] = this.cadenaResultado;
+    }
     
     definirCadenaResultado(palabraSecreta, intento){
         if(this.nroIntentos < 6){
@@ -116,6 +126,7 @@ class FuncionesWordle{
             this.definirAzules(palabraSecreta, intento);
             this.definirAmarillas(palabraSecreta,intento);
             this.concatenarResultado();
+            this.agregarPista();
         }
     }
     

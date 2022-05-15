@@ -11,16 +11,22 @@ function generarHtmlIngresarIntento(tamPalabraSecreta){
     return codigoFormulario;
 }
 
-function generarHtmlHistorialIntentos(tamPalabraSecreta, historialIntentos){
+function generarHtmlHistorialIntentos(tamPalabraSecreta, historialIntentos, listaPistas){
     let codigoFormulario = "";
     let codigoInputs;
     let intento = "";
+    let pista = "";
     for(let fila = 0; fila < 6; fila++){
         intento = historialIntentos[fila];
+        pista = listaPistas[fila];
         for(let col = 0; col < tamPalabraSecreta; col++){
-
             if (intento != "X"){
-                codigoInputs = `<input type="text" class="historial-intento fila-${fila+1}" size="1" maxlength="1" disabled value="${intento[col]}">`;
+                if(pista[col] == "z"){
+                    codigoInputs = `<input style="background-color: rgb(18, 156, 235); type="text" class="historial-intento fila-${fila+1}" size="1" maxlength="1" value="${intento[col]}" disabled>`;
+                }
+                else{
+                    codigoInputs = `<input type="text" class="historial-intento fila-${fila+1}" size="1" maxlength="1" value="${intento[col]}" disabled>`; 
+                }           
             }
             else{
                 codigoInputs = `<input type="text" class="historial-intento fila-${fila+1}" size="1" maxlength="1" disabled>`;

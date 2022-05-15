@@ -213,4 +213,14 @@ describe("H. MOSTRAR PISTAS", () => {
     expect(cadena_resultado).toEqual("zaao");
   });
 
+  it("1. Si la “Palabra Secreta” es <casa> y se ingresa como intento el código <caos>, debería mostrar la “Cadena Respuesta” como <zzoa>", ()=> {
+    wordleH.definirSecreta("AOAA");
+    wordleH.definirSecreta("AAOU");
+    wordleH.definirIntento("AOAA");
+    wordleH.definirIntento("LOBO");
+
+    let cadena_resultado = wordleH.obtenerListaPistas();
+    expect(cadena_resultado).toEqual(["zaao", "oaoo", "X", "X", "X", "X"]);
+  });
+
 });
