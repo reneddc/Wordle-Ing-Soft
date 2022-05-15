@@ -13,6 +13,8 @@ class Wordle{
     definirPalabraSecreta(){
         this.palabraSecreta = this.funcionesWordle.definirPalabraSecretaAlAzar();
         this.definirTamPalabraSecreta();
+        this.historialIntentos = this.funcionesWordle.definirHistorialIntentos();
+        this.nroIntentos = this.funcionesWordle.definirNroIntentos();
     }
 
     definirTamPalabraSecreta(){

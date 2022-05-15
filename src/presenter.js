@@ -1,5 +1,5 @@
 import Wordle from "./wordle"
-import generarHtmlIngresarIntento from "./generarHTML"
+import {generarHtmlIngresarIntento, generarHtmlHistorialIntentos} from "./generarHTML"
 
 
 //Clases
@@ -9,7 +9,9 @@ let wordle = new Wordle();
 //Variables
 let palabraSecreta;
 let tamPalabraSecreta;
-let intento ;
+let intento;
+let listaIntentos = [];
+let nroIntentos;
 
 
 //VISTAS
@@ -21,11 +23,13 @@ const intentosRealizados = document.querySelector("#intentos-realizados");
 //FORMULARIOS
 const formJuegoRapido = document.querySelector("#juego-rapido-form");
 const formIntento = document.querySelector("#ingresar-intento-form");
+const formHistorialIntentos = document.querySelector("#historial-intentos-form");
 
 
 //GenerarVistas
 function mostrarVistaCampoJuego(){
   formIntento.innerHTML = generarHtmlIngresarIntento(tamPalabraSecreta);
+  refrescarHistorialIntentos();
   vistaCampoJuego.style.display = "block";
 }
 
@@ -40,8 +44,12 @@ function mostrarIntentosRealizados(){
     intentosRealizados.innerHTML = "";
   }
   else{
-    intentosRealizados.innerHTML = intento;
+    refrescarHistorialIntentos();
   }
+}
+
+function refrescarHistorialIntentos(){
+  formHistorialIntentos.innerHTML = generarHtmlHistorialIntentos(tamPalabraSecreta, listaIntentos);
 }
 
 
@@ -54,6 +62,7 @@ formJuegoRapido.addEventListener("submit", (event) => {
   tamPalabraSecreta = palabraSecreta.length;
   alert("Palabra Secreta: " + palabraSecreta);
 
+  listaIntentos = wordle.obtenerHistorialIntentos();
   ocultarVistaModalidades();
   mostrarVistaCampoJuego();
 });
@@ -68,5 +77,8 @@ formIntento.addEventListener("submit", (event) => {
       intento = intento + listaCaracteresIntento[i].value;
   }
   wordle.definirIntento(intento);
+  listaIntentos = wordle.obtenerHistorialIntentos();
+  nroIntentos = wordle.obtenerNroIntentos();
   mostrarIntentosRealizados();
+
 });
