@@ -4,6 +4,7 @@ class Wordle{
     constructor(){
         this.palabraSecreta;
         this.tamPalabraSecreta;
+        this.intento;
         this.funcionesWordle = new FuncionesWordle();
     }
 
@@ -16,12 +17,12 @@ class Wordle{
         this.tamPalabraSecreta = this.funcionesWordle.definirTamanioPalabraSecreta(this.palabraSecreta);
     }
 
-    ingresarIntento(intentoPalabra){
-        let intento = intentoPalabra;
-        if(intentoPalabra.length < this.tamPalabraSecreta){
-            intento = "Palabra Incompleta.";
-        }
-        return intento;
+    definirIntento(intentoPalabra){
+        this.intento = this.funcionesWordle.definirIntento(intentoPalabra, this.tamPalabraSecreta);
+    }
+
+    obtenerIntento(){
+        return this.intento;
     }
     
     obtenerPalabraSecreta(){
