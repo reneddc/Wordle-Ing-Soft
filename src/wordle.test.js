@@ -46,8 +46,14 @@ describe("G. INGRESAR INTENTOS", () => {
 
   it("2. Si la palabra secreta es <HOLA> y se ingresa como intento la palabra <ho>, debería mostrar el mensaje “Palabra incompleta”" , () => {
     wordleG.definirPalabraSecreta();
-    let intento = wordleG.ingresarIntento("ho");
+    let intento = wordleG.ingresarIntento("HO");
     expect(intento).toEqual("Palabra Incompleta.");
+  });
+
+  it("3. Si la palabra secreta es <HOLA> y se ingresa como intento la palabra <bola>, se debería mostrar el intento <BOLA>" , () => {
+    wordleG.definirPalabraSecreta();
+    let intento = wordleG.ingresarIntento("BOLA");
+    expect(intento).toEqual("BOLA");
   });
 
 });

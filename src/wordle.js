@@ -9,16 +9,15 @@ class Wordle{
 
     definirPalabraSecreta(){
         this.palabraSecreta = this.funcionesWordle.definirPalabraSecretaAlAzar();
+        this.definirTamPalabraSecreta();
     }
 
     definirTamPalabraSecreta(){
         this.tamPalabraSecreta = this.funcionesWordle.definirTamanioPalabraSecreta(this.palabraSecreta);
-        console.log(this.tamPalabraSecreta)
     }
 
     ingresarIntento(intentoPalabra){
         let intento = "";
-        this.definirTamPalabraSecreta();
         if(intentoPalabra.length < this.tamPalabraSecreta){
             intento = "Palabra Incompleta.";
         }
