@@ -46,5 +46,8 @@ class Wordle{
     obtenerPalabrasSeleccionables(){
         return this.funcionesWordle.obtenerListaPalabras();
     }
+    obtenerCadenaResultado(){
+        return this.funcionesWordle.obtenerCadenaResultado();
+    }
 }
 export default Wordle;

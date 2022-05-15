@@ -1,5 +1,12 @@
 import Wordle from "./wordle"
 
+describe("B. VER PANTALLA PRINCIPAL (JUGADOR)", () => {
+  //HDU 1
+  it("1. Presionar el botón de “Juego Rápido” y enviar a la vista “Campo de Juego”", ()=> {});
+
+  //HDU 2
+  it("2. Presionar el botón de “Tutorial” y enviar a la vista “Tutorial”", ()=> {});
+})
 
 describe("F. DEFINIR MODALIDADES DE JUEGO", () => {
   let wordleF = new Wordle();
@@ -138,4 +145,17 @@ describe("G. INGRESAR INTENTOS", () => {
     expect(listaIntentos).toEqual(["HOLA", "HOJA", "COLA", "COLA", "COCA", "PERO"]);
     expect(nroIntentos).toEqual(6);
   });
+});
+
+describe("H. MOSTRAR PISTAS", () => {
+  let wordleH = new Wordle();
+  
+  //HDU 1
+  it("1.Ingresar un intento y que muestre una “Cadena Resultado” de caracteres del tamaño del intento con el símbolo <o>.", ()=> {
+    wordleH.definirPalabraSecreta();
+    wordleH.definirIntento("HOLA");
+    let cadena_resultado = wordleH.obtenerCadenaResultado();
+    expect(cadena_resultado).toEqual("oooo");
+  });
+
 });

@@ -72,4 +72,13 @@ G. INGRESAR INTENTOS
         4.4. Si el contador de intentos es igual a 6, debería bloquearse la opción de ingresar más intentos
 
 
+H. MOSTRAR PISTAS
+
+    HDU 1: Ingresar un intento y que muestre una “Cadena Resultado” de caracteres del tamaño del intento con el símbolo <o>.
+        TESTS:
+        (UI)1.1. En la vista “Tutorial” debería visualizarse la descripción del juego: “El juego consiste en adivinar una palabra que el juego elige al azar…..”
+
+    HDU 2: Mostrar los pasos del juego.
+        TESTS:
+        (UI)2.1. En la vista “Tutorial” debería visualizarse los pasos del juego: Paso 1: Elegir una modalidad de juego, Paso 2: Ingresar una palabra real como intento, Paso 3: Ver las pistas del intento anterior…………
     

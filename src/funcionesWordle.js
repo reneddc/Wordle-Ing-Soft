@@ -65,6 +65,10 @@ class FuncionesWordle{
     definirNroIntentos(){
         return this.nroIntentos;
     }
+    
+    obtenerCadenaResultado(){
+        return "";
+    }
 }
 
 export default FuncionesWordle;
