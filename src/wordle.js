@@ -36,7 +36,6 @@ class Wordle{
         this.funcionesWordle.definirCadenaResultado(this.palabraSecreta,this.intento);
     }
 
-
     obtenerIntento(){
         return this.intento;
     }
