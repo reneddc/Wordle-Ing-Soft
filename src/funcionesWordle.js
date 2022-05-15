@@ -95,8 +95,8 @@ class FuncionesWordle{
 
     definirAmarillas(palabraSecreta, intento){
         for(let i = 0; i < palabraSecreta.length; i++){
-            if(this.cadenaResultado[0] != "z" && palabraSecreta.search(intento[0]) != -1){
-                this.cadenaResultado[0] = "a";
+            if(this.cadenaResultado[i] != "z" && palabraSecreta.search(intento[i]) != -1){
+                this.cadenaResultado[i] = "a";
             }
         }
     }
