@@ -6,6 +6,7 @@ class FuncionesWordle{
         this.tamPalabrasSeleccionables = this.palabrasSeleccionables.length;
         this.listaIntentos = ["X", "X", "X", "X", "X", "X"];
         this.nroIntentos;
+        this.cadenaResultado;
     }
 
     definirPalabraSecretaAlAzar(){
@@ -58,6 +59,10 @@ class FuncionesWordle{
         return intento;
     }
 
+    definirCadenaResultado(){
+        return this.cadenaResultado = "oooo";
+    }
+
     definirHistorialIntentos(){
         return this.listaIntentos;
     }
@@ -67,7 +72,7 @@ class FuncionesWordle{
     }
     
     obtenerCadenaResultado(){
-        return "";
+        return this.definirCadenaResultado();
     }
 }
 

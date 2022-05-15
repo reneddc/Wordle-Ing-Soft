@@ -8,6 +8,7 @@ class Wordle{
         this.historialIntentos = [];
         this.nroIntentos;
         this.funcionesWordle = new FuncionesWordle();
+        this.cadenaResultado;
     }
 
     definirPalabraSecreta(){
@@ -47,6 +48,7 @@ class Wordle{
         return this.funcionesWordle.obtenerListaPalabras();
     }
     obtenerCadenaResultado(){
+        this.funcionesWordle.definirCadenaResultado();
         return this.funcionesWordle.obtenerCadenaResultado();
     }
 }
