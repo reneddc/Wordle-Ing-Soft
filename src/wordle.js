@@ -17,7 +17,7 @@ class Wordle{
     }
 
     ingresarIntento(intentoPalabra){
-        let intento = "";
+        let intento = intentoPalabra;
         if(intentoPalabra.length < this.tamPalabraSecreta){
             intento = "Palabra Incompleta.";
         }
