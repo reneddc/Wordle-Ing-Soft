@@ -159,7 +159,7 @@ describe("H. MOSTRAR PISTAS", () => {
   });
 
   //HDU 2
-  it("2. Ingresar un intento y mostrar una “Cadena Resultado” con la misma cantidad de caracteres, con la primera posición igual a <z>, si la primera letra de la palabra secreta es igual a la primera letra del intento y el resto de caracteres iguales a <o>.", ()=> {
+  it("1. Ingresar un intento y mostrar una “Cadena Resultado” con la misma cantidad de caracteres, con la primera posición igual a <z>, si la primera letra de la palabra secreta es igual a la primera letra del intento y el resto de caracteres iguales a <o>.", ()=> {
     wordleH.definirSecreta("CRIL");
     wordleH.definirIntento("COLA");
     let cadena_resultado = wordleH.obtenerCadenaResultado();
@@ -167,11 +167,18 @@ describe("H. MOSTRAR PISTAS", () => {
   });
 
   //HDU 3
-  it("3. Ingresar un intento y mostrar una “Cadena Resultado” con las posiciones iguales a <z>, si las letras y sus posiciones de la palabra secreta son iguales a las letras y sus posiciones del intento,  el resto de caracteres iguales a <o>.", ()=> {
+  it("1. Ingresar un intento y mostrar una “Cadena Resultado” con las posiciones iguales a <z>, si las letras y sus posiciones de la palabra secreta son iguales a las letras y sus posiciones del intento,  el resto de caracteres iguales a <o>.", ()=> {
     wordleH.definirSecreta("CRIA");
     wordleH.definirIntento("COLA");
     let cadena_resultado = wordleH.obtenerCadenaResultado();
     expect(cadena_resultado).toEqual("zooz");
+  });
+
+  it("2. Ingresar un intento y mostrar una “Cadena Resultado” con las posiciones iguales a <z>, si las letras y sus posiciones de la palabra secreta son iguales a las letras y sus posiciones del intento,  el resto de caracteres iguales a <o>.", ()=> {
+    wordleH.definirSecreta("COLA");
+    wordleH.definirIntento("COLA");
+    let cadena_resultado = wordleH.obtenerCadenaResultado();
+    expect(cadena_resultado).toEqual("zzzz");
   });
 
 });

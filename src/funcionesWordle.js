@@ -88,6 +88,7 @@ class FuncionesWordle{
     definirCadenaResultado(palabraSecreta, intento){
         let concatResultado = "";
         for(let i = 0; i < palabraSecreta.length; i++){
+            //console.log(i);
             if(intento[i] == palabraSecreta[i]){
                 this.cadenaResultado[i] = "z";
             }
