@@ -12,7 +12,7 @@ class Wordle{
 
     ingresarIntento(intentoPalabra){
         let intento = "";
-        if(intentoPalabra.length == 0){
+        if(intentoPalabra.length < this.palabraSecreta.length){
             intento = "Palabra Incompleta.";
         }
         return intento;
