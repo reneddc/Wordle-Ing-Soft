@@ -31,7 +31,8 @@ function generarHtmlHistorialIntentos(tamPalabraSecreta, historialIntentos, list
                     codigoInputs = `<input style="background-color: rgb(194, 192, 192);text-align: center" type="text" class="historial-intento fila-${fila+1}" size="1" maxlength="1" value="${intento[col]}" disabled>`; 
                 }       
             }
-            else{
+            else
+            {
                 codigoInputs = `<input type="text" class="historial-intento fila-${fila+1}" size="1" maxlength="1" disabled>`;
             }
             codigoFormulario = codigoFormulario + codigoInputs;

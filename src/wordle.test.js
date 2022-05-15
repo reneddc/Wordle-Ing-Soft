@@ -222,5 +222,22 @@ describe("H. MOSTRAR PISTAS", () => {
     let cadena_resultado = wordleH.obtenerListaPistas();
     expect(cadena_resultado).toEqual(["zaao", "oaoo", "X", "X", "X", "X"]);
   });
+});
 
+  
+describe("I. PERDER", () => {
+    let wordleI = new Wordle();
+    
+    //HDU 1
+    it("1. Si ninguna da como “Cadena Resultado” <zzzz> o tiene todas las letras con fondo azul, debería mostrar el mensaje “Perdedor”", ()=> {
+      wordleI.definirSecreta("AOAA");
+      wordleI.definirIntento("HOLA");
+      wordleI.definirIntento("HOJA");
+      wordleI.definirIntento("COLA");
+      wordleI.definirIntento("COLA");
+      wordleI.definirIntento("COCA");
+      wordleI.definirIntento("PERO");
+      let resultado = wordleI.obtenerResultadoJuego();
+      expect(resultado).toEqual("Perdedor");
+    });
 });
