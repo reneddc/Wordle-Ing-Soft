@@ -135,10 +135,7 @@ describe("G. INGRESAR INTENTOS", () => {
     wordleG.definirIntento("DUKE");
     let listaIntentos = wordleG.obtenerHistorialIntentos();
     let nroIntentos = wordleG.obtenerNroIntentos();
-    expect(listaIntentos).toEqual(["HOLA", "COLA", "HOJA", "COLA", "COCA", "PERO"]);
+    expect(listaIntentos).toEqual(["HOLA", "HOJA", "COLA", "COLA", "COCA", "PERO"]);
     expect(nroIntentos).toEqual(6);
   });
 });
-
-
-"HOJA", "HOLA", "LOBO", "COLA", "PALO", "PICO", "COCA", "PERO", "DUKE"
