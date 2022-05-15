@@ -133,6 +133,10 @@ class FuncionesWordle{
     obtenerCadenaResultado(){
         return this.cadenaResultado;
     }
+
+    definirResultadoJuego(){
+        return "Perdedor";
+    }
 }
 
 export default FuncionesWordle;

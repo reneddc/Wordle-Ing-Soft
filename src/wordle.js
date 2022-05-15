@@ -66,5 +66,9 @@ class Wordle{
     obtenerListaPistas(){
         return this.listaPistas;
     }
+    
+    obtenerResultadoJuego(){
+        return this.funcionesWordle.definirResultadoJuego();
+    }
 }
 export default Wordle;

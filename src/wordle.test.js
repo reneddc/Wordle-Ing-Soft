@@ -240,4 +240,19 @@ describe("I. PERDER", () => {
       let resultado = wordleI.obtenerResultadoJuego();
       expect(resultado).toEqual("Perdedor");
     });
+
+    //HDU 2
+    /*
+    it("2. Si alguna da como “Cadena Resultado” <zzzz> o tiene todas las letras con fondo azul, debería mostrar el mensaje “Ganador”", ()=> {
+      wordleH.definirSecreta("AOAA");
+      wordleG.definirIntento("HOLA");
+      wordleG.definirIntento("HOJA");
+      wordleG.definirIntento("COLA");
+      wordleG.definirIntento("COLA");
+      wordleG.definirIntento("COCA");
+      wordleG.definirIntento("AOAA");
+      let resultado = wordleH.obtenerResultadoJuego();
+      expect(resultado).toEqual("Ganador");
+    });
+    */
 });
