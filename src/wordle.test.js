@@ -180,12 +180,23 @@ describe("H. MOSTRAR PISTAS", () => {
     let cadena_resultado = wordleH.obtenerCadenaResultado();
     expect(cadena_resultado).toEqual("zzzz");
   });
-  //HDU 5
 
-  it("1. Ingresar un intento y mostrar una “Cadena Resultado” con la misma cantidad de caracteres, con la primera posición igual a <a>, si alguna de las letras de la palabra secreta, menos la primera, es igual a la primera letra del intento y el resto de caracteres iguales a <o>.", ()=> {
+  //HDU 5
+  it("1. Ingresar un intento y mostrar una “Cadena Resultado” con las posiciones iguales a <a>, si alguna de las letras de la palabra secreta es igual a una de las letras del intento y su posición es distinta, el resto de caracteres iguales a <o>.", ()=> {
     wordleH.definirSecreta("YCYY");
     wordleH.definirIntento("COLA");
     let cadena_resultado = wordleH.obtenerCadenaResultado();
     expect(cadena_resultado).toEqual("aooo");
   });
+
+  //HDU 6
+  it("1. Si la “Palabra Secreta” es <casa> y se ingresa como intento el código <seco>, debería mostrar la “Cadena Respuesta” como <aoao>.", ()=> {
+    wordleH.definirSecreta("ALOC");
+    wordleH.definirIntento("COLA");
+    let cadena_resultado = wordleH.obtenerCadenaResultado();
+    expect(cadena_resultado).toEqual("aaaa");
+  });
+
+
+
 });
