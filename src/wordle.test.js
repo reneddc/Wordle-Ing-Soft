@@ -124,7 +124,21 @@ describe("G. INGRESAR INTENTOS", () => {
     expect(nroIntentos).toEqual(2);
   });
 
+  it("4. Si el contador de intentos es igual a 6, debería bloquearse la opción de ingresar más intentos" , () => {
+    wordleG.definirPalabraSecreta();
+    wordleG.definirIntento("HOLA");
+    wordleG.definirIntento("HOJA");
+    wordleG.definirIntento("COLA");
+    wordleG.definirIntento("COLA");
+    wordleG.definirIntento("COCA");
+    wordleG.definirIntento("PERO");
+    wordleG.definirIntento("DUKE");
+    let listaIntentos = wordleG.obtenerHistorialIntentos();
+    let nroIntentos = wordleG.obtenerNroIntentos();
+    expect(listaIntentos).toEqual(["HOLA", "COLA", "HOJA", "COLA", "COCA", "PERO"]);
+    expect(nroIntentos).toEqual(6);
+  });
 });
 
 
-
+"HOJA", "HOLA", "LOBO", "COLA", "PALO", "PICO", "COCA", "PERO", "DUKE"
