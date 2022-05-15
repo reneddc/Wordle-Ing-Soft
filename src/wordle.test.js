@@ -240,7 +240,18 @@ describe("I. PERDER", () => {
       let resultado = wordleI.obtenerResultadoJuego();
       expect(resultado).toEqual("Perdedor");
     });
+});
 
-    //HDU 2
- 
+
+describe("J. GANAR", () => {
+  let wordleJ = new Wordle();
+  
+  //HDU 1
+  it("1. Si ninguna da como “Cadena Resultado” <zzzz> o tiene todas las letras con fondo azul, debería mostrar el mensaje “Perdedor”", ()=> {
+    wordleJ.definirSecreta("HOLA");
+    wordleJ.definirIntento("HOJA");
+    wordleJ.definirIntento("HOLA");
+    let resultado = wordleJ.obtenerResultadoJuego();
+    expect(resultado).toEqual("Ganador");
+  });
 });
