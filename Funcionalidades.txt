@@ -61,8 +61,8 @@ G. INGRESAR INTENTOS
 
     HDU 3: Ingresar varias palabras como intentos, una después de otra y que se visualicen
         TESTS:
-        3.1. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <COLA>, debería devolver “No existe esa palabra” y volver a intentar ingresar otra palabra.
-        3.2. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <BOLA>, después la palabra <HOLA>, debería mostrarse los intentos <BOLA, HOLA>
+        3.1. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <BOLA>, después la palabra <HOLA>, debería mostrarse los intentos <BOLA, HOLA>
+        3.2. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <COLA>, debería devolver “No existe esa palabra” y volver a intentar ingresar otra palabra.
 
     HDU 4: Ingresar 6 palabras como intentos, una después de otra y que se visualicen de manera apilada en orden de ingreso.
         TESTS:
