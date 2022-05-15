@@ -166,7 +166,7 @@ describe("H. MOSTRAR PISTAS", () => {
     expect(cadena_resultado).toEqual("zooo");
   });
 
-  //HDU 2
+  //HDU 3
   it("3. Ingresar un intento y mostrar una “Cadena Resultado” con las posiciones iguales a <z>, si las letras y sus posiciones de la palabra secreta son iguales a las letras y sus posiciones del intento,  el resto de caracteres iguales a <o>.", ()=> {
     wordleH.definirSecreta("CRIA");
     wordleH.definirIntento("COLA");
