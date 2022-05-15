@@ -2,7 +2,7 @@ import WordleError from "./ExcepcionesWordle";
 
 class FuncionesWordle{
     constructor(){
-        this.palabrasSeleccionables = ["HOJA", "HOLA", "LOBO", "COLA", "PALO", "CINCO", "CIRCO", "PERRO", "DUKE"];
+        this.palabrasSeleccionables = ["HOJA", "HOLA", "LOBO", "COLA", "PALO", "PICO", "COCA", "PERO", "DUKE"];
         this.tamPalabrasSeleccionables = this.palabrasSeleccionables.length;
     }
 
@@ -25,9 +25,17 @@ class FuncionesWordle{
         }
     }
 
+    esIntentoPermitido(intento){
+        if(!this.palabrasSeleccionables.includes(intento)){
+            return intento = "";
+        }
+        return intento;
+    }
+
     definirIntento(intento, tamPalabraSecreta){
         try{
             this.esIntentoIncompleto(intento, tamPalabraSecreta);
+            intento = this.esIntentoPermitido(intento);
         }
         catch(err){
             intento = err.message;

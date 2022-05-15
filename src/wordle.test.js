@@ -16,7 +16,7 @@ describe("F. DEFINIR MODALIDADES DE JUEGO", () => {
 
   //HDU 4
   it("1. Si se presiona el botón “Juego Rápido” y la lista de palabras creadas por el juego fue <HOLA, HIJA, DUKE>, debería mostrar un mensaje de texto con las palabras <HOLA, HIJA, DUKE>" , () => {
-    expect(wordleF.obtenerPalabrasSeleccionables()).toEqual(["HOJA", "HOLA", "LOBO", "COLA", "PALO", "CINCO", "CIRCO", "PERRO", "DUKE"]);
+    expect(wordleF.obtenerPalabrasSeleccionables()).toEqual(["HOJA", "HOLA", "LOBO", "COLA", "PALO", "PICO", "COCA", "PERO", "DUKE"]);
   });
 
   //HDU 5
@@ -54,10 +54,19 @@ describe("G. INGRESAR INTENTOS", () => {
 
   it("3. Si la palabra secreta es <HOLA> y se ingresa como intento la palabra <bola>, se debería mostrar el intento <BOLA>" , () => {
     wordleG.definirPalabraSecreta();
-    wordleG.definirIntento("BOLA");
+    wordleG.definirIntento("HOLA");
     let intento = wordleG.obtenerIntento();
-    expect(intento).toEqual("BOLA");
+    expect(intento).toEqual("HOLA");
   });
+
+  //HDU 2
+  it("1. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <BOLA>, debería mostrarse la palabra <BOLA> como un intento válido" , () => {
+    wordleG.definirPalabraSecreta();
+    wordleG.definirIntento("HOLA");
+    let intento = wordleG.obtenerIntento();
+    expect(intento).toEqual("HOLA");
+  });
+
 
 });
 
