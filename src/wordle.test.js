@@ -67,6 +67,12 @@ describe("G. INGRESAR INTENTOS", () => {
     expect(intento).toEqual("HOLA");
   });
 
+  it("2. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <COLA>, debería devolver “No existe esa palabra”" , () => {
+    wordleG.definirPalabraSecreta();
+    wordleG.definirIntento("BOLA");
+    let intento = wordleG.obtenerIntento();
+    expect(intento).toEqual("No existe esa palabra.");
+  });
 
 });
 

@@ -27,15 +27,14 @@ class FuncionesWordle{
 
     esIntentoPermitido(intento){
         if(!this.palabrasSeleccionables.includes(intento)){
-            return intento = "";
+            throw new WordleError("No existe esa palabra.");
         }
-        return intento;
     }
 
     definirIntento(intento, tamPalabraSecreta){
         try{
             this.esIntentoIncompleto(intento, tamPalabraSecreta);
-            intento = this.esIntentoPermitido(intento);
+            this.esIntentoPermitido(intento);
         }
         catch(err){
             intento = err.message;
@@ -43,4 +42,5 @@ class FuncionesWordle{
         return intento;
     }
 }
+
 export default FuncionesWordle;
