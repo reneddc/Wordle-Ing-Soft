@@ -18,9 +18,7 @@ const formJuegoRapido = document.querySelector("#juego-rapido-form");
 formJuegoRapido.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  let listaPalabrasSeleccionables = wordle.obtenerPalabrasSeleccionables();
-  alert("Lista de Palabras Seleccionables: " + listaPalabrasSeleccionables);
-
+  wordle.definirPalabraSecreta();
   let palabraSecreta = wordle.obtenerPalabraSecreta();
   alert("Palabra Secreta: " + palabraSecreta);
 
