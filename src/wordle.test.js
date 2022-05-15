@@ -158,4 +158,12 @@ describe("H. MOSTRAR PISTAS", () => {
     expect(cadena_resultado).toEqual("oooo");
   });
 
+  //HDU 2
+  it("Ingresar un intento y mostrar una “Cadena Resultado” con la misma cantidad de caracteres, con la primera posición igual a <z>, si la primera letra de la palabra secreta es igual a la primera letra del intento y el resto de caracteres iguales a <o>.", ()=> {
+    wordleH.definirPalabraSecreta();
+    wordleH.definirIntento("HOLA");
+    let cadena_resultado = wordleH.obtenerCadenaResultado();
+    expect(cadena_resultado).toEqual("zooo");
+  });
+
 });
