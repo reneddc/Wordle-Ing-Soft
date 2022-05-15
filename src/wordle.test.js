@@ -113,6 +113,17 @@ describe("G. INGRESAR INTENTOS", () => {
     expect(nroIntentos).toEqual(1);
   });
 
+  it("3. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <BOLA>, <COLA>, <HOLA>, debería devolver el contador de intentos en 2 y la lista de intentos como <BOLA, HOLA, “”, “”, “”, “”>" , () => {
+    wordleG.definirPalabraSecreta();
+    wordleG.definirIntento("HOLA");
+    wordleG.definirIntento("SOJA");
+    wordleG.definirIntento("COLA");
+    let listaIntentos = wordleG.obtenerHistorialIntentos();
+    let nroIntentos = wordleG.obtenerNroIntentos();
+    expect(listaIntentos).toEqual(["HOLA", "COLA", "X", "X", "X", "X"]);
+    expect(nroIntentos).toEqual(2);
+  });
+
 });
 
 

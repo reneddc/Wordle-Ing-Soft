@@ -67,9 +67,9 @@ G. INGRESAR INTENTOS
     HDU 4: Ingresar 6 palabras como intentos, una después de otra y que se visualicen de manera apilada en orden de ingreso.
         TESTS:
         4.1. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <COLA>, debería devolver “No existe esa palabra”, el contador de intentos igual a 0 y la lista de intentos como <””, “”, “”, “”, “”, “”>.
-        4.1. La lista de palabras seleccionables es <BOLA, HOLA, DUKE>, se ingresó el intento <COLA>, el contador de intentos es igual a 0 y la lista de intentos es <””, “”, “”, “”, “”, “”>. Posteriormente se ingresó otro intento <HOLA>, debería mostrarse la lista de intentos como <HOLA, “”, “”, “”, “”, “”> y el contador de intentos igual a 1.
-        4.1. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <BOLA>, <COLA>, <HOLA>, debería devolver el contador de intentos en 2 y la lista de intentos como <BOLA, HOLA, “”, “”, “”, “”>
-        4.1. Si el contador de intentos es igual a 6, debería bloquearse la opción de ingresar más intentos
+        4.2. La lista de palabras seleccionables es <BOLA, HOLA, DUKE>, se ingresó el intento <COLA>, el contador de intentos es igual a 0 y la lista de intentos es <””, “”, “”, “”, “”, “”>. Posteriormente se ingresó otro intento <HOLA>, debería mostrarse la lista de intentos como <HOLA, “”, “”, “”, “”, “”> y el contador de intentos igual a 1.
+        4.3. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <BOLA>, <COLA>, <HOLA>, debería devolver el contador de intentos en 2 y la lista de intentos como <BOLA, HOLA, “”, “”, “”, “”>
+        4.4. Si el contador de intentos es igual a 6, debería bloquearse la opción de ingresar más intentos
 
 
     
