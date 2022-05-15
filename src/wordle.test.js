@@ -92,6 +92,7 @@ describe("G. INGRESAR INTENTOS", () => {
     expect(listaIntentos).toEqual(["HOLA", "COLA"]);
   });
 
+  
 });
 
 
