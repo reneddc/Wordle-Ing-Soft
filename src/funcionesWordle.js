@@ -4,7 +4,8 @@ class FuncionesWordle{
     constructor(){
         this.palabrasSeleccionables = ["HOJA", "HOLA", "LOBO", "COLA", "PALO", "PICO", "COCA", "PERO", "DUKE"];
         this.tamPalabrasSeleccionables = this.palabrasSeleccionables.length;
-        this.listaIntentos = [];
+        this.listaIntentos = ["X", "X", "X", "X", "X", "X"];
+        this.nroIntentos;
     }
 
     definirPalabraSecretaAlAzar(){
@@ -14,7 +15,8 @@ class FuncionesWordle{
     }
 
     limpiarListaIntentos(){
-        this.listaIntentos = [];
+        this.listaIntentos = ["X", "X", "X", "X", "X", "X"];
+        this.nroIntentos = 0;
     }
 
     obtenerListaPalabras(){
@@ -38,7 +40,8 @@ class FuncionesWordle{
     }
 
     agregarIntentoHistorial(intento){
-        this.listaIntentos.push(intento);
+        this.listaIntentos[this.nroIntentos] = intento;
+        this.nroIntentos++;
     }
 
     definirIntento(intento, tamPalabraSecreta){
@@ -55,6 +58,10 @@ class FuncionesWordle{
 
     definirHistorialIntentos(){
         return this.listaIntentos;
+    }
+
+    definirNroIntentos(){
+        return this.nroIntentos;
     }
 }
 

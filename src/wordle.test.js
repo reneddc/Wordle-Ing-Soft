@@ -80,7 +80,8 @@ describe("G. INGRESAR INTENTOS", () => {
     wordleG.definirIntento("HOLA");
     wordleG.definirIntento("COLA");
     let listaIntentos = wordleG.obtenerHistorialIntentos();
-    expect(listaIntentos).toEqual(["HOLA", "COLA"]);
+    expect(listaIntentos[0]).toEqual("HOLA");
+    expect(listaIntentos[1]).toEqual("COLA");
   });
 
   it("2. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <COLA>, debería devolver “No existe esa palabra” y volver a intentar ingresar otra palabra" , () => {
@@ -89,15 +90,18 @@ describe("G. INGRESAR INTENTOS", () => {
     wordleG.definirIntento("SOLA");
     wordleG.definirIntento("COLA");
     let listaIntentos = wordleG.obtenerHistorialIntentos();
-    expect(listaIntentos).toEqual(["HOLA", "COLA"]);
+    expect(listaIntentos[0]).toEqual("HOLA");
+    expect(listaIntentos[1]).toEqual("COLA");
   });
 
   //HDU 4
   it("1. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <COLA>, debería devolver “No existe esa palabra”, el contador de intentos igual a 0 y la lista de intentos como <””, “”, “”, “”, “”, “”>" , () => {
     wordleG.definirPalabraSecreta();
-    wordleG.definirIntento("HOLA");
+    wordleG.definirIntento("SOLA");
     let listaIntentos = wordleG.obtenerHistorialIntentos();
+    let nroIntentos = wordleG.obtenerNroIntentos();
     expect(listaIntentos).toEqual(["X", "X", "X", "X", "X", "X"]);
+    expect(nroIntentos).toEqual(0);
   });
 
 });
