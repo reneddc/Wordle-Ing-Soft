@@ -85,24 +85,32 @@ class FuncionesWordle{
         return this.nroIntentos;
     }
 
-    definirCadenaResultado(palabraSecreta, intento){
-        let concatResultado = "";
-        if(this.nroIntentos < 6){
-            for(let i = 0; i < palabraSecreta.length; i++){
-                //console.log(i);
-                if(intento[i] == palabraSecreta[i]){
-                    this.cadenaResultado[i] = "z";
-                }
-                else
-                { 
-                    if(palabraSecreta.search(intento[0]) != -1){
-                        this.cadenaResultado[0] = "a";
-                    }
-                }   
-                concatResultado += this.cadenaResultado[i];
+    definirAzules(palabraSecreta, intento){
+        for(let i = 0; i < palabraSecreta.length; i++){
+            if(intento[i] == palabraSecreta[i]){
+                this.cadenaResultado[i] = "z";
             }
         }
-        this.cadenaResultado = concatResultado;
+    }
+
+    definirAmarillas(palabraSecreta, intento){
+        for(let i = 0; i < palabraSecreta.length; i++){
+            if(this.cadenaResultado[0] != "z" && palabraSecreta.search(intento[0]) != -1){
+                this.cadenaResultado[0] = "a";
+            }
+        }
+    }
+
+    concatenarResultado(){
+        this.cadenaResultado = this.cadenaResultado.join("");
+    }
+    
+    definirCadenaResultado(palabraSecreta, intento){
+        if(this.nroIntentos < 6){
+            this.definirAzules(palabraSecreta, intento);
+            this.definirAmarillas(palabraSecreta,intento);
+            this.concatenarResultado();
+        }
     }
     
     obtenerCadenaResultado(){
