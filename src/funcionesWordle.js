@@ -12,5 +12,9 @@ class FuncionesWordle{
     obtenerListaPalabras(){
         return this.palabrasSeleccionables;
     }
+
+    definirTamanioPalabraSecreta(palabraSecreta){
+        return palabraSecreta.length;
+    }
 }
 export default FuncionesWordle;
