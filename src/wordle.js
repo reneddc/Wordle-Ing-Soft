@@ -18,6 +18,13 @@ class Wordle{
         this.nroIntentos = this.funcionesWordle.definirNroIntentos();
     }
 
+    definirSecreta(palabra){
+        this.palabraSecreta = this.funcionesWordle.definirPalabraSecreta(palabra);
+        this.definirTamPalabraSecreta();
+        this.historialIntentos = this.funcionesWordle.definirHistorialIntentos();
+        this.nroIntentos = this.funcionesWordle.definirNroIntentos();
+    }
+
     definirTamPalabraSecreta(){
         this.tamPalabraSecreta = this.funcionesWordle.definirTamanioPalabraSecreta(this.palabraSecreta);
     }
@@ -27,6 +34,7 @@ class Wordle{
         this.historialIntentos = this.funcionesWordle.definirHistorialIntentos();
         this.nroIntentos = this.funcionesWordle.definirNroIntentos();
     }
+
 
     obtenerIntento(){
         return this.intento;
@@ -47,8 +55,9 @@ class Wordle{
     obtenerPalabrasSeleccionables(){
         return this.funcionesWordle.obtenerListaPalabras();
     }
+    
     obtenerCadenaResultado(){
-        this.funcionesWordle.definirCadenaResultado();
+        this.funcionesWordle.definirCadenaResultado(this.palabraSecreta,this.intento);
         return this.funcionesWordle.obtenerCadenaResultado();
     }
 }

@@ -9,10 +9,26 @@ class FuncionesWordle{
         this.cadenaResultado;
     }
 
+    generarResultadoVacio(tamPalabraSecreta){
+        this.cadenaResultado = [];
+        for(var i = 0; i < tamPalabraSecreta; i++){
+            this.cadenaResultado.push("o");
+        }
+    }
+
     definirPalabraSecretaAlAzar(){
         this.limpiarListaIntentos();
         let posicion = Math.floor(Math.random() * this.tamPalabrasSeleccionables);
         return this.palabrasSeleccionables[posicion]
+    }
+    
+    definirPalabraSecreta(palabra){
+        this.limpiarListaIntentos();
+        if(!this.palabrasSeleccionables.includes(palabra)){
+            this.palabrasSeleccionables.push(palabra);
+            this.tamPalabrasSeleccionables++;
+        }
+        return palabra;
     }
 
     limpiarListaIntentos(){
@@ -51,6 +67,7 @@ class FuncionesWordle{
                 this.esIntentoIncompleto(intento, tamPalabraSecreta);
                 this.esIntentoPermitido(intento);
                 this.agregarIntentoHistorial(intento);
+                this.generarResultadoVacio(tamPalabraSecreta);
             }
         }
         catch(err){
@@ -59,9 +76,6 @@ class FuncionesWordle{
         return intento;
     }
 
-    definirCadenaResultado(){
-        return this.cadenaResultado = "oooo";
-    }
 
     definirHistorialIntentos(){
         return this.listaIntentos;
@@ -70,9 +84,20 @@ class FuncionesWordle{
     definirNroIntentos(){
         return this.nroIntentos;
     }
+
+    definirCadenaResultado(palabraSecreta, intento){
+        let concatResultado = "";
+        for(let i = 0; i < palabraSecreta.length; i++){
+            if(intento[0] == palabraSecreta[0]){
+                this.cadenaResultado[0] = "z";
+            }
+            concatResultado += this.cadenaResultado[i];
+        }
+        this.cadenaResultado = concatResultado;
+    }
     
     obtenerCadenaResultado(){
-        return this.definirCadenaResultado();
+        return this.cadenaResultado;
     }
 }
 
