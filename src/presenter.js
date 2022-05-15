@@ -20,6 +20,7 @@ const vistaCampoJuego = document.querySelector("#vista-campo-juego");
 const intentosRealizados = document.querySelector("#intentos-realizados");
 const vistaTutorial = document.querySelector("#vista-tutorial");
 const vistaPantallaPrincipal = document.querySelector("#vista-Principal");
+const vistaPerdedor = document.querySelector("#vista-perdedor");
 
 
 //FORMULARIOS
@@ -54,6 +55,10 @@ function ocultarVistaPrincipal(){
   vistaPantallaPrincipal.style.display = "none";
 }
 
+function ocultarVistaCampoJuego(){
+  vistaCampoJuego.style.display = "none";
+}
+
 function mostrarIntentosRealizados(){
   let palabraIntento = wordle.obtenerIntento();
   if(intento != palabraIntento){
@@ -68,6 +73,14 @@ function mostrarIntentosRealizados(){
 function refrescarHistorialIntentos(){
   let listaPistas = wordle.obtenerListaPistas();
   formHistorialIntentos.innerHTML = generarHtmlHistorialIntentos(tamPalabraSecreta, listaIntentos, listaPistas);
+}
+
+function mostrarVistaPerdedor(){
+  nroIntentos = wordle.obtenerNroIntentos();
+  if(nroIntentos == 6 && intento != palabraSecreta){
+    vistaPerdedor.style.display = "block";
+    ocultarVistaCampoJuego();
+  }
 }
 
 
@@ -113,6 +126,7 @@ formIntento.addEventListener("submit", (event) => {
   nroIntentos = wordle.obtenerNroIntentos();
   mostrarIntentosRealizados();
 
+  mostrarVistaPerdedor();
 });
 
 formTutorial.addEventListener("submit", (event) => {
