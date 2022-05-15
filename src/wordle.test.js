@@ -190,13 +190,18 @@ describe("H. MOSTRAR PISTAS", () => {
   });
 
   //HDU 6
-  it("1. Si la “Palabra Secreta” es <casa> y se ingresa como intento el código <seco>, debería mostrar la “Cadena Respuesta” como <aoao>.", ()=> {
+  it("1. Si la “Palabra Secreta” es <aloc> y se ingresa como intento el código <cola>, debería mostrar la “Cadena Respuesta” como <aaaa>.", ()=> {
     wordleH.definirSecreta("ALOC");
     wordleH.definirIntento("COLA");
     let cadena_resultado = wordleH.obtenerCadenaResultado();
     expect(cadena_resultado).toEqual("aaaa");
   });
 
-
+  it("2. Si la “Palabra Secreta” es <alob> y se ingresa como intento el código <lobo>, debería mostrar la “Cadena Respuesta” como <aaao>.", ()=> {
+    wordleH.definirSecreta("ALOB");
+    wordleH.definirIntento("LOBO");
+    let cadena_resultado = wordleH.obtenerCadenaResultado();
+    expect(cadena_resultado).toEqual("aaao");
+  });
 
 });
