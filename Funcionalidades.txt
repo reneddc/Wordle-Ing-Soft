@@ -43,3 +43,33 @@ F. DEFINIR MODALIDADES DE JUEGO
     HDU 6: Seleccionar al azar y mostrar una palabra de la lista que será la “Palabra Secreta” a adivinar
         TESTS:
         (UI)6.1. Si se presiona el botón “Juego Rápido” y la lista de palabras creada por el juego fue <HOLA, HIJA, DUKE>, debería definirse al azar la “Palabra Secreta” y mostrarla. Ejm: Si se elige al azar la palabra <DUKE>, se debería establecer como la “Palabra Secreta” la palabra <DUKE> y mostrarse en pantalla.
+
+
+
+G. INGRESAR INTENTOS
+
+    HDU 1: Ingresar una palabra como intento y que se visualice en mayúsculas 
+        TESTS:
+        1.1. Si la palabra secreta es <HOLA> y se ingresa como intento la palabra <>, debería mostrar el mensaje “Palabra incompleta”.
+        1.2. Si la palabra secreta es <HOLA> y se ingresa como intento la palabra <ho>, debería mostrar el mensaje “Palabra incompleta”.
+        1.3. Si la palabra secreta es <HOLA> y se ingresa como intento la palabra <bola>, se debería mostrar el intento <BOLA>.
+
+    HDU 2: Determinar si la palabra que ingresa existe en la lista de palabras seleccionables
+        TESTS:
+        2.1. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <BOLA>, debería mostrarse la palabra <BOLA> como un intento válido.
+        2.2. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <COLA>, debería devolver “No existe esa palabra”.
+
+    HDU 3: Ingresar varias palabras como intentos, una después de otra y que se visualicen
+        TESTS:
+        3.1. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <COLA>, debería devolver “No existe esa palabra” y volver a intentar ingresar otra palabra.
+        3.2. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <BOLA>, después la palabra <HOLA>, debería mostrarse los intentos <BOLA, HOLA>
+
+    HDU 4: Ingresar 6 palabras como intentos, una después de otra y que se visualicen de manera apilada en orden de ingreso.
+        TESTS:
+        4.1. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <COLA>, debería devolver “No existe esa palabra”, el contador de intentos igual a 0 y la lista de intentos como <””, “”, “”, “”, “”, “”>.
+        4.1. La lista de palabras seleccionables es <BOLA, HOLA, DUKE>, se ingresó el intento <COLA>, el contador de intentos es igual a 0 y la lista de intentos es <””, “”, “”, “”, “”, “”>. Posteriormente se ingresó otro intento <HOLA>, debería mostrarse la lista de intentos como <HOLA, “”, “”, “”, “”, “”> y el contador de intentos igual a 1.
+        4.1. Si la lista de palabras seleccionables es <BOLA, HOLA, DUKE> y se ingresa el intento <BOLA>, <COLA>, <HOLA>, debería devolver el contador de intentos en 2 y la lista de intentos como <BOLA, HOLA, “”, “”, “”, “”>
+        4.1. Si el contador de intentos es igual a 6, debería bloquearse la opción de ingresar más intentos
+
+
+    
