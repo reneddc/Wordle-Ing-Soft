@@ -76,14 +76,20 @@ function refrescarHistorialIntentos(){
   formHistorialIntentos.innerHTML = generarHtmlHistorialIntentos(tamPalabraSecreta, listaIntentos, listaPistas);
 }
 
-function mostrarVistaPerdedor(){
-  nroIntentos = wordle.obtenerNroIntentos();
-  if(nroIntentos == 6 && intento != palabraSecreta){
+function mostrarVistaPerdedor(resultadoJuego){
+  if(resultadoJuego == "Perdedor"){
     vistaPerdedor.style.display = "block";
     ocultarVistaCampoJuego();
   }
 }
 
+function mostrarVistaGanador(resultadoJuego){
+  if(resultadoJuego == "Ganador")
+  {
+    vistaGanador.style.display = "block";
+    ocultarVistaCampoJuego();
+  }
+}
 
 //EVENTOS
 formJuegoRapido.addEventListener("submit", (event) => {
@@ -127,7 +133,9 @@ formIntento.addEventListener("submit", (event) => {
   nroIntentos = wordle.obtenerNroIntentos();
   mostrarIntentosRealizados();
 
-  mostrarVistaPerdedor();
+  let resultadoJuego = wordle.obtenerResultadoJuego();
+  mostrarVistaPerdedor(resultadoJuego);
+  mostrarVistaGanador(resultadoJuego);
 });
 
 formTutorial.addEventListener("submit", (event) => {
