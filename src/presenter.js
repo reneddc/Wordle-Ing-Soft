@@ -21,6 +21,7 @@ const intentosRealizados = document.querySelector("#intentos-realizados");
 const vistaTutorial = document.querySelector("#vista-tutorial");
 const vistaPantallaPrincipal = document.querySelector("#vista-Principal");
 const vistaPerdedor = document.querySelector("#vista-perdedor");
+const vistaGanador = document.querySelector("#vista-ganador");
 
 
 //FORMULARIOS

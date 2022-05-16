@@ -68,7 +68,7 @@ class Wordle{
     }
     
     obtenerResultadoJuego(){
-        return this.funcionesWordle.definirResultadoJuego();
+        return this.funcionesWordle.definirResultadoJuego(this.intento, this.palabraSecreta);
     }
 }
 export default Wordle;

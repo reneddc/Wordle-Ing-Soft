@@ -247,7 +247,7 @@ describe("J. GANAR", () => {
   let wordleJ = new Wordle();
   
   //HDU 1
-  it("1. Si ninguna da como “Cadena Resultado” <zzzz> o tiene todas las letras con fondo azul, debería mostrar el mensaje “Perdedor”", ()=> {
+  it("1. Si da como “Cadena Resultado” <zzzz> o tiene todas las letras con fondo azul, debería mostrar el mensaje “Ganador” y bloquear la opción de ingresar más intentos.", ()=> {
     wordleJ.definirSecreta("HOLA");
     wordleJ.definirIntento("HOJA");
     wordleJ.definirIntento("HOLA");

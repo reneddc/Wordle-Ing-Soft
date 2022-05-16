@@ -134,8 +134,16 @@ class FuncionesWordle{
         return this.cadenaResultado;
     }
 
-    definirResultadoJuego(){
-        return "Perdedor";
+    definirResultadoJuego(intento, palabraSecreta){
+        let resultado = "Activo";
+        if(intento == palabraSecreta){
+            resultado = "Ganador";
+        }
+        else if (this.nroIntentos == 6)
+        {
+            resultado = "Perdedor";
+        }
+        return resultado;
     }
 }
 
