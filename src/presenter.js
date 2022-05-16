@@ -1,5 +1,5 @@
 import Wordle from "./wordle"
-import {generarHtmlIngresarIntento, generarHtmlHistorialIntentos} from "./generarHTML"
+import {generarHtmlIngresarIntento, generarHtmlHistorialIntentos, generarHtmlPalabraSecreta} from "./generarHTML"
 
 
 //Clases
@@ -33,6 +33,7 @@ const formModalidades = document.querySelector("#modalidades-form");
 const formJuegoRapidoPrincipal = document.querySelector("#juego-rapido-form-principal");
 const formPerdedor = document.querySelector("#perdedor-form");
 const formGanador = document.querySelector("#ganador-form");
+const formPalabraSecreta = document.querySelector("#palabra-secreta-form");
 
 
 //GenerarVistas
@@ -65,7 +66,6 @@ function ocultarVistaCampoJuego(){
 function mostrarIntentosRealizados(){
   let palabraIntento = wordle.obtenerIntento();
   if(intento != palabraIntento){
-    alert(palabraIntento);
     intentosRealizados.innerHTML = "";
   }
   else
@@ -94,6 +94,7 @@ function mostrarVistaGanador(resultadoJuego){
   {
     vistaGanador.style.display = "block";
     ocultarVistaCampoJuego();
+    formPalabraSecreta.innerHTML = generarHtmlPalabraSecreta(tamPalabraSecreta, palabraSecreta);
     formGanador.innerHTML = generarHtmlHistorialIntentos(tamPalabraSecreta, listaIntentos , listaPistas);
   }
 }
@@ -105,7 +106,6 @@ formJuegoRapido.addEventListener("submit", (event) => {
   wordle.definirPalabraSecreta();
   palabraSecreta = wordle.obtenerPalabraSecreta();
   tamPalabraSecreta = palabraSecreta.length;
-  alert("Palabra Secreta: " + palabraSecreta);
 
   listaIntentos = wordle.obtenerHistorialIntentos();
   ocultarVistaPrincipal();
@@ -119,7 +119,6 @@ formJuegoRapidoPrincipal.addEventListener("submit", (event) => {
   wordle.definirPalabraSecreta();
   palabraSecreta = wordle.obtenerPalabraSecreta();
   tamPalabraSecreta = palabraSecreta.length;
-  alert("Palabra Secreta: " + palabraSecreta);
 
   listaIntentos = wordle.obtenerHistorialIntentos();
   ocultarVistaPrincipal();
@@ -141,8 +140,8 @@ formIntento.addEventListener("submit", (event) => {
   mostrarIntentosRealizados();
 
   let resultadoJuego = wordle.obtenerResultadoJuego();
-  alert(listaIntentos);
-  alert(resultadoJuego);
+  //alert(listaIntentos);
+  //alert(resultadoJuego);
   mostrarVistaPerdedor(resultadoJuego);
   mostrarVistaGanador(resultadoJuego);
 });
