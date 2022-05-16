@@ -141,6 +141,7 @@ formIntento.addEventListener("submit", (event) => {
   mostrarVistaPerdedor(resultadoJuego);
   mostrarVistaGanador(resultadoJuego);
   alert(listaIntentos);
+  alert(resultadoJuego);
 });
 
 formTutorial.addEventListener("submit", (event) => {
