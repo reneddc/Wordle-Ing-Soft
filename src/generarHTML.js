@@ -29,10 +29,7 @@ function generarHtmlHistorialIntentos(tamPalabraSecreta, historialIntentos, list
                 }
                 if(pista[col] == "o"){
                     codigoInputs = `<input style="background-color: rgb(194, 192, 192);text-align: center" type="text" class="historial-intento fila-${fila+1}" size="1" maxlength="1" value="${intento[col]}" disabled>`; 
-                }else
-                {
-                    codigoInputs = `<input style="background-color: rgb(255, 100, 255);text-align: center" type="text" class="historial-intento fila-${fila+1}" size="1" maxlength="1" value="${intento[col]}" disabled>`; 
-                }       
+                }     
             }
             else
             {

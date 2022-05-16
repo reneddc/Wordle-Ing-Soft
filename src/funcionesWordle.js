@@ -121,7 +121,7 @@ class FuncionesWordle{
     }
     
     definirCadenaResultado(palabraSecreta, intento){
-        if(this.nroIntentos < 6){
+        if(this.listaPistas[5].length == 1){
             this.copiaPalabraSecreta = palabraSecreta.split("");
             this.definirAzules(palabraSecreta, intento);
             this.definirAmarillas(palabraSecreta,intento);
