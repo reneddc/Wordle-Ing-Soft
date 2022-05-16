@@ -31,6 +31,7 @@ const formHistorialIntentos = document.querySelector("#historial-intentos-form")
 const formTutorial = document.querySelector("#tutorial-form");
 const formModalidades = document.querySelector("#modalidades-form");
 const formJuegoRapidoPrincipal = document.querySelector("#juego-rapido-form-principal");
+const formPerdedor = document.querySelector("#perdedor-form");
 
 
 //GenerarVistas
@@ -66,7 +67,8 @@ function mostrarIntentosRealizados(){
     alert(palabraIntento);
     intentosRealizados.innerHTML = "";
   }
-  else{
+  else
+  {
     refrescarHistorialIntentos();
   }
 }
@@ -77,9 +79,11 @@ function refrescarHistorialIntentos(){
 }
 
 function mostrarVistaPerdedor(resultadoJuego){
+  let listaPistas = wordle.obtenerListaPistas();
   if(resultadoJuego == "Perdedor"){
     vistaPerdedor.style.display = "block";
     ocultarVistaCampoJuego();
+    formPerdedor.innerHTML = generarHtmlHistorialIntentos(tamPalabraSecreta, listaIntentos, listaPistas);
   }
 }
 
