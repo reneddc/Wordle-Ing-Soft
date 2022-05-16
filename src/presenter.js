@@ -83,7 +83,7 @@ function mostrarVistaPerdedor(resultadoJuego){
   if(resultadoJuego == "Perdedor"){
     vistaPerdedor.style.display = "block";
     ocultarVistaCampoJuego();
-    formPerdedor.innerHTML = generarHtmlHistorialIntentos(tamPalabraSecreta, listaIntentos, listaPistas);
+    formPerdedor.innerHTML = generarHtmlHistorialIntentos(tamPalabraSecreta, listaIntentos , listaPistas);
   }
 }
 
@@ -140,6 +140,7 @@ formIntento.addEventListener("submit", (event) => {
   let resultadoJuego = wordle.obtenerResultadoJuego();
   mostrarVistaPerdedor(resultadoJuego);
   mostrarVistaGanador(resultadoJuego);
+  alert(listaIntentos);
 });
 
 formTutorial.addEventListener("submit", (event) => {
