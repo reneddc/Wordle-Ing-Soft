@@ -32,6 +32,7 @@ const formTutorial = document.querySelector("#tutorial-form");
 const formModalidades = document.querySelector("#modalidades-form");
 const formJuegoRapidoPrincipal = document.querySelector("#juego-rapido-form-principal");
 const formPerdedor = document.querySelector("#perdedor-form");
+const formGanador = document.querySelector("#ganador-form");
 
 
 //GenerarVistas
@@ -88,10 +89,12 @@ function mostrarVistaPerdedor(resultadoJuego){
 }
 
 function mostrarVistaGanador(resultadoJuego){
+  let listaPistas = wordle.obtenerListaPistas();
   if(resultadoJuego == "Ganador")
   {
     vistaGanador.style.display = "block";
     ocultarVistaCampoJuego();
+    formGanador.innerHTML = generarHtmlHistorialIntentos(tamPalabraSecreta, listaIntentos , listaPistas);
   }
 }
 
@@ -138,10 +141,10 @@ formIntento.addEventListener("submit", (event) => {
   mostrarIntentosRealizados();
 
   let resultadoJuego = wordle.obtenerResultadoJuego();
-  mostrarVistaPerdedor(resultadoJuego);
-  mostrarVistaGanador(resultadoJuego);
   alert(listaIntentos);
   alert(resultadoJuego);
+  mostrarVistaPerdedor(resultadoJuego);
+  mostrarVistaGanador(resultadoJuego);
 });
 
 formTutorial.addEventListener("submit", (event) => {
