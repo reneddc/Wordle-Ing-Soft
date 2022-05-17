@@ -34,6 +34,7 @@ const formJuegoRapidoPrincipal = document.querySelector("#juego-rapido-form-prin
 const formPerdedor = document.querySelector("#perdedor-form");
 const formGanador = document.querySelector("#ganador-form");
 const formPalabraSecreta = document.querySelector("#palabra-secreta-form");
+const formReintentoPerRand = document.querySelector("#perdedor-form-volver-jugar-rand")
 
 
 //GenerarVistas
@@ -45,6 +46,7 @@ function mostrarVistaCampoJuego(){
   formIntento.innerHTML = generarHtmlIngresarIntento(tamPalabraSecreta);
   refrescarHistorialIntentos();
   vistaCampoJuego.style.display = "block";
+  alert(palabraSecreta);
 }
 
 function mostrarVistaTutorial(){
@@ -63,6 +65,9 @@ function ocultarVistaCampoJuego(){
   vistaCampoJuego.style.display = "none";
 }
 
+function ocultarVistaPerdedor(){
+ vistaPerdedor.style.display = "none";
+}
 function mostrarIntentosRealizados(){
   let palabraIntento = wordle.obtenerIntento();
   if(intento != palabraIntento){
@@ -140,8 +145,6 @@ formIntento.addEventListener("submit", (event) => {
   mostrarIntentosRealizados();
 
   let resultadoJuego = wordle.obtenerResultadoJuego();
-  //alert(listaIntentos);
-  //alert(resultadoJuego);
   mostrarVistaPerdedor(resultadoJuego);
   mostrarVistaGanador(resultadoJuego);
 });
@@ -156,4 +159,15 @@ formModalidades.addEventListener("submit", (event) => {
   event.preventDefault();
   ocultarVistaPrincipal();
   mostrarVistaModalidades();
+});
+
+formReintentoPerRand.addEventListener("submit", (event)=>{
+  event.preventDefault();
+  wordle.definirPalabraSecreta();
+  palabraSecreta = wordle.obtenerPalabraSecreta();
+  tamPalabraSecreta = palabraSecreta.length;
+  listaIntentos = wordle.obtenerHistorialIntentos();
+  ocultarVistaPerdedor();
+  mostrarVistaCampoJuego();
+  
 });
