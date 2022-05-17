@@ -75,6 +75,7 @@ function ocultarVistaGanador(){
 function mostrarIntentosRealizados(){
   let palabraIntento = wordle.obtenerIntento();
   if(intento != palabraIntento){
+    alert(palabraIntento);
     intentosRealizados.innerHTML = "";
   }
   else
@@ -173,8 +174,8 @@ formReintentoPerRand.addEventListener("submit", (event)=>{
   listaIntentos = wordle.obtenerHistorialIntentos();
   ocultarVistaPerdedor();
   mostrarVistaCampoJuego();
-  
 });
+
 formNuevaGanador.addEventListener("submit", (event)=>{
   event.preventDefault();
   wordle.definirPalabraSecreta();
