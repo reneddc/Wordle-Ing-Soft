@@ -35,6 +35,7 @@ const formPerdedor = document.querySelector("#perdedor-form");
 const formGanador = document.querySelector("#ganador-form");
 const formPalabraSecreta = document.querySelector("#palabra-secreta-form");
 const formReintentoPerRand = document.querySelector("#perdedor-form-volver-jugar-rand")
+const formNuevaGanador=document.querySelector("#ganador-form-volver-jugar")
 
 
 //GenerarVistas
@@ -67,6 +68,9 @@ function ocultarVistaCampoJuego(){
 
 function ocultarVistaPerdedor(){
  vistaPerdedor.style.display = "none";
+}
+function ocultarVistaGanador(){
+  vistaGanador.style.display = "none";
 }
 function mostrarIntentosRealizados(){
   let palabraIntento = wordle.obtenerIntento();
@@ -170,4 +174,13 @@ formReintentoPerRand.addEventListener("submit", (event)=>{
   ocultarVistaPerdedor();
   mostrarVistaCampoJuego();
   
+});
+formNuevaGanador.addEventListener("submit", (event)=>{
+  event.preventDefault();
+  wordle.definirPalabraSecreta();
+  palabraSecreta = wordle.obtenerPalabraSecreta();
+  tamPalabraSecreta = palabraSecreta.length;
+  listaIntentos = wordle.obtenerHistorialIntentos();
+  ocultarVistaGanador();
+  mostrarVistaCampoJuego();
 });
