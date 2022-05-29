@@ -44,4 +44,16 @@ describe("E. DEFINIR BANCO DE PALABRAS", () => {
         let listaPalabrasDeporte = wordleE.obtenerCategoriaDeporte();
         expect(listaPalabrasDeporte[listaPalabrasDeporte.length - 1]).toEqual("FUTBOL");
     });
+
+    //HDU 4
+
+    it("1. Si se ingresa la palabra <WIFI> y se elige la categoría <UCB> y <SISTEMAS>, la palabra se debería añadir a la lista de palabras correspondiente a UCB, sistemas y al banco de palabras general." , () => {
+        let palabra = "WIFI";
+        wordleE.definirNuevaPalabra(palabra);
+        wordleE.definirCategorias(["UCB", "Sistemas"]);
+        let listaPalabrasSistemas = wordleE.obtenerCategoriaSistemas();
+        let listaPalabrasUCB = wordle.obtenerCategoriaUCB();
+        expect(listaPalabrasUCB[listaPalabrasUCB.length - 1]).toEqual("WIFI");
+        expect(listaPalabrasSistemas[listaPalabrasSistemas.length - 1]).toEqual("WIFI");
+    });
 });
