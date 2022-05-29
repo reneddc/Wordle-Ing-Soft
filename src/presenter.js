@@ -39,7 +39,11 @@ const formReintentoPerRand = document.querySelector("#perdedor-form-volver-jugar
 const formNuevaGanador=document.querySelector("#ganador-form-volver-jugar")
 const formReintentoPerSame = document.querySelector("#perdedor-form-volver-jugar-same")
 const formAdministrador = document.querySelector("#administrador-form")
+const formRegistroAdmin = document.querySelector("#registro-admin-form")
 
+//INPUTS
+
+const passwordAdmin = document.querySelector("#password-admin");
 
 //GenerarVistas
 function mostrarVistaModalidades(){
@@ -209,4 +213,10 @@ formAdministrador.addEventListener("submit", (event) => {
   event.preventDefault();
   ocultarVistaPrincipal();
   mostrarVistaRegistrarseAdmin();
+});
+
+formRegistroAdmin.addEventListener("submit", (event) => {
+  event.preventDefault();
+  let password = passwordAdmin.value;
+  alert(`La contraseña es: ${password}`);
 });
