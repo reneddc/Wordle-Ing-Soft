@@ -2,7 +2,7 @@ import WordleError from "./ExcepcionesWordle";
 
 class FuncionesWordle{
     constructor(){
-        this.palabrasSeleccionables = ["HOJA", "HOLA", "LOBO", "COLA", "PALO", "PICO", "COCA", "PERO", "DUKE"];
+        this.palabrasSeleccionables = ["HOJA", "HOLA", "LOBO", "COLA", "PALO", "PICO", "COCA", "PERO", "DUKE", "RAYOS", "MESSI", "PALOS", "LIBRO", "LLAVE", "BALON", "CINCO"];
         this.tamPalabrasSeleccionables = this.palabrasSeleccionables.length;
         this.listaIntentos = ["X", "X", "X", "X", "X", "X"];
         this.listaPistas = ["X", "X", "X", "X", "X", "X"];

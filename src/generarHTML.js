@@ -2,7 +2,7 @@
 function generarHtmlIngresarIntento(tamPalabraSecreta){
     let codigoFormulario = "";
     let codigoInputs = `<input type="text" class="ingresar-intento" size="1" maxlength="1">`;
-    let codigoSubmit = `<input type="submit" value="Aceptar"/>`;
+    let codigoSubmit = `<input type="submit" class="ingresar-palabra-boton" value="Aceptar"/>`;
     for(let i = 0; i < tamPalabraSecreta; i++){
         codigoFormulario = codigoFormulario + codigoInputs;
     }
@@ -33,7 +33,7 @@ function generarHtmlHistorialIntentos(tamPalabraSecreta, historialIntentos, list
             }
             else
             {
-                codigoInputs = `<input type="text" class="historial-intento fila-${fila+1}" size="1" maxlength="1" disabled>`;
+                codigoInputs = `<input style="background-color: rgb(255, 255, 255)" type="text" class="historial-intento fila-${fila+1}" size="1" maxlength="1" disabled>`;
             }
             codigoFormulario = codigoFormulario + codigoInputs;
         }
