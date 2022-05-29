@@ -1,35 +1,44 @@
 <html>
+  <head>
+    <script type="module" src="./src/presenter.js"></script>
+    <link rel="stylesheet" href="./style/styleUordel.css">
+</head>
   <body>
-    <h1>WORDLE</h1>
+
+    <!-------------------------------------------VISTA PRINCIPAL-------------------------------------------------->
+
   <div id="vista-Principal">
+
+    <div id="contenedor-vista-principal">
+        <img id="logo-vista-principal" src="./imagenes/UORDEL Logo.png" alt="Logo_UORDEL" width="600 px" height="600px">
+
+        <div id="contenedor-opciones-vista-principal">
+            <form id="juego-rapido-form-principal" class="opciones-vista-principal">
+              <div id="descripcion-juego-rapido-principal" class="divdatos-botones">
+                <h2 class="titulo-opciones"> Juego Rápido </h2>
+                <h5 class="descripcion-opciones"> Adivinar una palabra cualquiera elegida al azar </h5>
+              </div>
+                <input type="submit" value="JUGAR" id="boton-juego-rapido"  class="submit"/>
+            </form>
     
-      <img src="./imagenes/UORDEL Logo.png" alt="Logo_UORDEL">
-
-      <h2>Pagina Principal</h2><br>
-
-      <form id="juego-rapido-form-principal">
-        <div id="descripcion-juego-rapido-principal">
-          <h2> Juego Rápido </h2>
-          <h5> Adivinar una palabra cualquiera elegida al azar </h5>
+            <form id="modalidades-form" class="opciones-vista-principal">
+              <div id="descripcion-modalidades" class="divdatos-botones">
+                <h2 class="titulo-opciones"> Modalidades </h2>
+                <h5 class="descripcion-opciones"> Explora las diferentes modalidades de juego </h5>
+              </div>
+                <input type="submit" value="IR" class="submit"/>
+            </form>
+    
+            <form id="tutorial-form" class="opciones-vista-principal">
+              <div id="descripcion-tutorial" class="divdatos-botones">
+                <h2 class="titulo-opciones"> Tutorial </h2>
+                <h5 class="descripcion-opciones"> Aprende a jugar </h5>
+              </div>
+                <input type="submit" value="VER" class="submit"/>
+            </form>
         </div>
-          <input type="submit" value="Juego Rápido" id="boton-juego-rapido"  />
-      </form>
+    </div>
 
-      <form id="modalidades-form">
-        <div id="descripcion-modalidades">
-          <h2> Modalidades </h2>
-          <h5> Explora las diferentes modalidades de juego </h5>
-        </div>
-          <input type="submit" value="Modalidades" />
-      </form>
-
-      <form id="tutorial-form">
-        <div id="descripcion-tutorial">
-          <h2> Tutorial </h2>
-          <h5> Aprende a jugar </h5>
-        </div>
-          <input type="submit" value="Tutorial" />
-      </form>
   </div>
  
   <div id="vista-campo-juego" style="display: none;">
@@ -103,7 +112,6 @@
     </form>
   </div>
 
-  <script type="module" src="./src/presenter.js"></script>
   </body>
 </html>
 

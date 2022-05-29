@@ -1,0 +1,82 @@
+/* latin-ext */
+@font-face {
+    font-family: 'Tomorrow';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/tomorrow/v15/WBLmrETNbFtZCeGqgRXce2DwLQ.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Tomorrow';
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/tomorrow/v15/WBLmrETNbFtZCeGqgRXSe2A.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+
+* {
+    margin: 0 0 0 0;
+    font-weight: normal;
+    font-family: "Tomorrow";
+}
+
+* {
+    margin: 0 0 0 0;
+    font-weight: normal;
+    font-family: "Tomorrow";
+}
+
+.submit{
+    width: 250px;
+    height: 40px;
+    margin: 10px;
+    align-items: center;
+    /*margin-left: 330px;*/
+    background-color: rgb(247, 147, 30);
+    color: white;
+    font-family: "Tomorrow";
+    font-size: 20px;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    border-style: none;
+    cursor: pointer;
+}
+
+#contenedor-vista-principal{
+    display: flex;
+    flex-direction: row;
+}
+
+#contenedor-opciones-vista-principal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#logo-vista-principal{
+    padding-left: 80px;
+}
+
+.opciones-vista-principal{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.descripcion-opciones{
+    font-size: 25px;
+}
+
+.titulo-opciones{
+    font-size: 40px;
+    color: rgb(0, 74, 173);
+}
+
+.divdatos-botones{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
