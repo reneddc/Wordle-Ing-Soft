@@ -11,7 +11,7 @@ class Wordle{
         this.funcionesWordle = new FuncionesWordle();
         this.cadenaResultado;
         this.nuevaPalabra;
-        this.categoria;
+        this.categoria = [];
     }
 
     definirPalabraSecreta(){

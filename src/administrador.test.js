@@ -40,7 +40,7 @@ describe("E. DEFINIR BANCO DE PALABRAS", () => {
     it("1. Si se ingresa la palabra <FUTBOL> y se elige la categoría <Deporte>, la palabra se debería añadir a la lista de palabras correspondiente a deportes y al banco de palabras general." , () => {
         let palabra = "FUTBOL";
         wordleE.definirNuevaPalabra(palabra);
-        wordleE.definirCategorias("Deporte");
+        wordleE.definirCategorias(["Deporte"]);
         let listaPalabrasDeporte = wordleE.obtenerCategoriaDeporte();
         expect(listaPalabrasDeporte[listaPalabrasDeporte.length - 1]).toEqual("FUTBOL");
     });
@@ -52,7 +52,7 @@ describe("E. DEFINIR BANCO DE PALABRAS", () => {
         wordleE.definirNuevaPalabra(palabra);
         wordleE.definirCategorias(["UCB", "Sistemas"]);
         let listaPalabrasSistemas = wordleE.obtenerCategoriaSistemas();
-        let listaPalabrasUCB = wordle.obtenerCategoriaUCB();
+        let listaPalabrasUCB = wordleE.obtenerCategoriaUCB();
         expect(listaPalabrasUCB[listaPalabrasUCB.length - 1]).toEqual("WIFI");
         expect(listaPalabrasSistemas[listaPalabrasSistemas.length - 1]).toEqual("WIFI");
     });

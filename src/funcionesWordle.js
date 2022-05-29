@@ -16,10 +16,12 @@ class FuncionesWordle{
 
     definirCategorias(categoria){
         let palabra = this.palabrasSeleccionables[this.tamPalabrasSeleccionables - 1];
-        switch(categoria){
-            case "Deporte":this.categoriaDeporte.push(palabra);break;
-            case "UCB":this.categoriaUCB.push(palabra);break;
-            case "Sistemas":this.categoriaSistemas.push(palabra);break;
+        for(let i = 0; i < categoria.length; i++){
+            switch(categoria[i]){
+                case "Deporte":this.categoriaDeporte.push(palabra);break;
+                case "UCB":this.categoriaUCB.push(palabra);break;
+                case "Sistemas":this.categoriaSistemas.push(palabra);break;
+            }
         }
     }
   
@@ -79,11 +81,11 @@ class FuncionesWordle{
     }
 
     obtenerCategoriaUCB(){
-        return this.ccategoriaUCB;
+        return this.categoriaUCB;
     }
 
     obtenerCategoriaSistemas(){
-        return this.ccategoriaSistemas;
+        return this.categoriaSistemas;
     }
 
     definirTamanioPalabraSecreta(palabraSecreta){
