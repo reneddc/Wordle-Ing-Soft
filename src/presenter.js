@@ -12,6 +12,7 @@ let tamPalabraSecreta;
 let intento;
 let listaIntentos = [];
 let nroIntentos;
+let passwordAdministrador = "uordel8000";
 
 
 //VISTAS
@@ -23,6 +24,7 @@ const vistaPantallaPrincipal = document.querySelector("#vista-Principal");
 const vistaPerdedor = document.querySelector("#vista-perdedor");
 const vistaGanador = document.querySelector("#vista-ganador");
 const vistaRegistrarseAdmin = document.querySelector("#vista-registro-admistrador");
+const vistaBancoPalabras = document.querySelector("#vista-banco-palabras");
 
 
 //FORMULARIOS
@@ -58,6 +60,14 @@ function mostrarVistaCampoJuego(){
 
 function mostrarVistaTutorial(){
   vistaTutorial.style.display = "block";
+}
+
+function mostrarVistaBancoPalabras(){
+  vistaBancoPalabras.style.display = "block";
+}
+
+function ocultarVistaRegistrarseAdmin(){
+  vistaRegistrarseAdmin.style.display = "none";
 }
 
 function ocultarVistaModalidades(){
@@ -218,5 +228,10 @@ formAdministrador.addEventListener("submit", (event) => {
 formRegistroAdmin.addEventListener("submit", (event) => {
   event.preventDefault();
   let password = passwordAdmin.value;
-  alert(`La contraseña es: ${password}`);
+  if(password == passwordAdministrador){
+    ocultarVistaRegistrarseAdmin();
+    mostrarVistaBancoPalabras();
+  }else{
+    alert("Contraseña incorrecta. Intente de nuevo.");
+  }
 });
