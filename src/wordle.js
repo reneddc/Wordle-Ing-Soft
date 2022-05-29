@@ -10,6 +10,7 @@ class Wordle{
         this.nroIntentos;
         this.funcionesWordle = new FuncionesWordle();
         this.cadenaResultado;
+        this.nuevaPalabra;
     }
 
     definirPalabraSecreta(){
@@ -37,6 +38,10 @@ class Wordle{
         this.historialIntentos = this.funcionesWordle.definirHistorialIntentos();
         this.nroIntentos = this.funcionesWordle.definirNroIntentos();
         this.funcionesWordle.definirCadenaResultado(this.palabraSecreta,this.intento);
+    }
+
+    definirNuevaPalabra(nuevaPalabra){
+        this.nuevaPalabra = this.funcionesWordle.agregarNuevaPalabra(nuevaPalabra);
     }
 
     obtenerIntento(){
@@ -69,6 +74,10 @@ class Wordle{
     
     obtenerResultadoJuego(){
         return this.funcionesWordle.definirResultadoJuego(this.intento, this.palabraSecreta);
+    }
+
+    obtenerNuevaPalabra(){
+        return this.nuevaPalabra;
     }
 }
 export default Wordle;

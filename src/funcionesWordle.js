@@ -18,6 +18,22 @@ class FuncionesWordle{
         }
     }
 
+    definirNuevaPalabra(nuevaPalabra){
+        if(this.palabrasSeleccionables.includes(nuevaPalabra)){
+            throw new WordleError("Ya existe esa palabra.");
+        }
+    }
+
+    agregarNuevaPalabra(nuevaPalabra){
+        let palabra = nuevaPalabra;
+        try {
+            this.definirNuevaPalabra(nuevaPalabra);
+        } catch (error) {
+            palabra = error.message;
+        }
+        return palabra;
+    }
+    
     definirPalabraSecretaAlAzar(){
         this.limpiarListaIntentos();
         let posicion = Math.floor(Math.random() * this.tamPalabrasSeleccionables);
