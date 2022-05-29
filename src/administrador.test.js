@@ -11,4 +11,12 @@ describe("E. DEFINIR BANCO DE PALABRAS", () => {
         let nuevaPalabra = wordleE.obtenerNuevaPalabra();
         expect(nuevaPalabra).toEqual("Ya existe esa palabra.");
     });
+
+    it("2. Si se ingresa la palabra <MOUSE> y la palabra no existe en el banco de palabras debería mostrar la palabra <MOUSE>." , () => {
+        let palabra = "MOUSE";
+        wordleE.definirNuevaPalabra(palabra);
+        let nuevaPalabra = wordleE.obtenerNuevaPalabra();
+        expect(nuevaPalabra).toEqual("MOUSE");
+    });
+
 });
