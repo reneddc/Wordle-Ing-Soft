@@ -44,6 +44,10 @@ class Wordle{
         this.nuevaPalabra = this.funcionesWordle.agregarNuevaPalabra(nuevaPalabra);
     }
 
+    definirCategorias(categoria){
+        
+    }
+
     obtenerIntento(){
         return this.intento;
     }

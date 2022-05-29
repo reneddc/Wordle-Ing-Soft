@@ -11,6 +11,7 @@ class FuncionesWordle{
         this.copiaPalabraSecreta = [""];
     }
 
+
     generarResultadoVacio(tamPalabraSecreta){
         this.cadenaResultado = [];
         for(var i = 0; i < tamPalabraSecreta; i++){
@@ -57,7 +58,7 @@ class FuncionesWordle{
         this.listaPistas= ["X", "X", "X", "X", "X", "X"];
         this.nroIntentos = 0;
     }
-
+    
     obtenerListaPalabras(){
         return this.palabrasSeleccionables;
     }
