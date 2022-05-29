@@ -22,6 +22,7 @@ const vistaTutorial = document.querySelector("#vista-tutorial");
 const vistaPantallaPrincipal = document.querySelector("#vista-Principal");
 const vistaPerdedor = document.querySelector("#vista-perdedor");
 const vistaGanador = document.querySelector("#vista-ganador");
+const vistaRegistrarseAdmin = document.querySelector("#vista-registro-admistrador");
 
 
 //FORMULARIOS
@@ -37,6 +38,7 @@ const formPalabraSecreta = document.querySelector("#palabra-secreta-form");
 const formReintentoPerRand = document.querySelector("#perdedor-form-volver-jugar-rand")
 const formNuevaGanador=document.querySelector("#ganador-form-volver-jugar")
 const formReintentoPerSame = document.querySelector("#perdedor-form-volver-jugar-same")
+const formAdministrador = document.querySelector("#administrador-form")
 
 
 //GenerarVistas
@@ -69,9 +71,15 @@ function ocultarVistaCampoJuego(){
 function ocultarVistaPerdedor(){
  vistaPerdedor.style.display = "none";
 }
+
 function ocultarVistaGanador(){
   vistaGanador.style.display = "none";
 }
+
+function mostrarVistaRegistrarseAdmin(){ //mostrar vista de registrarse como admin
+  vistaRegistrarseAdmin.style.display = "block";
+}
+
 function mostrarIntentosRealizados(){
   let palabraIntento = wordle.obtenerIntento();
   if(intento != palabraIntento){
@@ -194,4 +202,11 @@ formReintentoPerSame.addEventListener("submit", (event)=>{
   listaIntentos = wordle.obtenerHistorialIntentos();
   ocultarVistaPerdedor();
   mostrarVistaCampoJuego();
+});
+
+
+formAdministrador.addEventListener("submit", (event) => {
+  event.preventDefault();
+  ocultarVistaPrincipal();
+  mostrarVistaRegistrarseAdmin();
 });
