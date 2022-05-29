@@ -41,7 +41,7 @@ describe("E. DEFINIR BANCO DE PALABRAS", () => {
         let palabra = "FUTBOL";
         wordleE.definirNuevaPalabra(palabra);
         wordleE.definirCategorias("Deporte");
-        let listaPalabrasDeporte = wordleE.obtenerPalabrasDeporte();
+        let listaPalabrasDeporte = wordleE.obtenerCategoriaDeporte();
         expect(listaPalabrasDeporte[listaPalabrasDeporte.length - 1]).toEqual("FUTBOL");
     });
 });

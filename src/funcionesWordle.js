@@ -3,6 +3,9 @@ import WordleError from "./ExcepcionesWordle";
 class FuncionesWordle{
     constructor(){
         this.palabrasSeleccionables = ["HOJA", "HOLA", "LOBO", "COLA", "PALO", "PICO", "COCA", "PERO", "DUKE", "RAYOS", "MESSI", "PALOS", "LIBRO", "LLAVE", "BALON", "CINCO"];
+        this.categoriaDeporte = [];
+        this.categoriaUCB = [];
+        this.categoriaSistemas = [];
         this.tamPalabrasSeleccionables = this.palabrasSeleccionables.length;
         this.listaIntentos = ["X", "X", "X", "X", "X", "X"];
         this.listaPistas = ["X", "X", "X", "X", "X", "X"];
@@ -11,7 +14,15 @@ class FuncionesWordle{
         this.copiaPalabraSecreta = [""];
     }
 
-
+    definirCategorias(categoria){
+        let palabra = this.palabrasSeleccionables[this.tamPalabrasSeleccionables - 1];
+        switch(categoria){
+            case "Deporte":this.categoriaDeporte.push(palabra);break;
+            case "UCB":this.categoriaUCB.push(palabra);break;
+            case "Sistemas":this.categoriaSistemas.push(palabra);break;
+        }
+    }
+  
     generarResultadoVacio(tamPalabraSecreta){
         this.cadenaResultado = [];
         for(var i = 0; i < tamPalabraSecreta; i++){
@@ -61,6 +72,18 @@ class FuncionesWordle{
     
     obtenerListaPalabras(){
         return this.palabrasSeleccionables;
+    }
+
+    obtenerCategoriaDeporte(){
+        return this.categoriaDeporte;
+    }
+
+    obtenerCategoriaUCB(){
+        return this.ccategoriaUCB;
+    }
+
+    obtenerCategoriaSistemas(){
+        return this.ccategoriaSistemas;
     }
 
     definirTamanioPalabraSecreta(palabraSecreta){

@@ -11,6 +11,7 @@ class Wordle{
         this.funcionesWordle = new FuncionesWordle();
         this.cadenaResultado;
         this.nuevaPalabra;
+        this.categoria;
     }
 
     definirPalabraSecreta(){
@@ -45,7 +46,7 @@ class Wordle{
     }
 
     definirCategorias(categoria){
-        
+        this.categoria = this.funcionesWordle.definirCategorias(categoria);
     }
 
     obtenerIntento(){
@@ -82,6 +83,18 @@ class Wordle{
 
     obtenerNuevaPalabra(){
         return this.nuevaPalabra;
+    }
+
+    obtenerCategoriaDeporte(){
+        return this.funcionesWordle.obtenerCategoriaDeporte();
+    }
+
+    obtenerCategoriaUCB(){
+        return this.funcionesWordle.obtenerCategoriaUCB();
+    }
+
+    obtenerCategoriaSistemas(){
+        return this.funcionesWordle.obtenerCategoriaSistemas();
     }
 }
 export default Wordle;
