@@ -19,4 +19,12 @@ describe("E. DEFINIR BANCO DE PALABRAS", () => {
         expect(nuevaPalabra).toEqual("MOUSE");
     });
 
+    //HDU 2
+
+    it("1. Si se ingresa la palabra <RATON> y la palabra no existe en el banco de palabras debería mostrar la palabra <RATON> y ser agregada al banco de palabras." , () => {
+        let palabra = "RATON";
+        wordleE.definirNuevaPalabra(palabra);
+        let listaPalabras = wordleE.obtenerPalabrasSeleccionables();
+        expect(listaPalabras[listaPalabras.length - 1]).toEqual("RATON");
+    });
 });
