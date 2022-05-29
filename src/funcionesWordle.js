@@ -51,10 +51,29 @@ class FuncionesWordle{
         return palabra;
     }
     
-    definirPalabraSecretaAlAzar(){
+    definirPalabraSecretaAlAzar(categoria){
+        let posicion = 0;
+        let palabraSec = "";
         this.limpiarListaIntentos();
-        let posicion = Math.floor(Math.random() * this.tamPalabrasSeleccionables);
-        return this.palabrasSeleccionables[posicion]
+        switch(categoria){
+            case "Deporte":{
+                            posicion = Math.floor(Math.random() * this.categoriaDeporte.length);
+                            palabraSec = this.categoriaDeporte[posicion];
+                            break;}
+            case "UCB":{
+                            posicion = Math.floor(Math.random() * this.categoriaUCB.length);
+                            palabraSec = this.categoriaUCB[posicion];
+                            break;}
+            case "Sistemas":{
+                            posicion = Math.floor(Math.random() * this.categoriaDeporte.length);
+                            palabraSec = this.categoriaDeporte[posicion];
+                            break;}
+            default: {
+                            posicion = Math.floor(Math.random() * this.tamPalabrasSeleccionables);
+                            palabraSec = this.palabrasSeleccionables[posicion];
+                            break;}
+        }
+        return palabraSec;
     }
     
     definirPalabraSecreta(palabra){

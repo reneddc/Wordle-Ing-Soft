@@ -75,7 +75,7 @@ describe("F. DEFINIR MODALIDADES DE JUEGO", () => {
     it("1. Si se presiona el botón de la categoría <DEPORTES> debería elegir una palabra secreta entre su lista de palabras como <MESSI, RONALDO, KOBE, NEYMAR>" , () => {
         wordleF.definirPalabraSecreta("Deporte");
         let palabraSecreta = wordleF.obtenerPalabraSecreta();
-        let listaDeportes = wordleF.obtenerNuevaPalabra();
+        let listaDeportes = wordleF.obtenerCategoriaDeporte();
         expect(listaDeportes).toContain(palabraSecreta);
     });
 
