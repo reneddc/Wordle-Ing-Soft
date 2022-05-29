@@ -3,7 +3,7 @@ import WordleError from "./ExcepcionesWordle";
 class FuncionesWordle{
     constructor(){
         this.palabrasSeleccionables = ["HOJA", "HOLA", "LOBO", "COLA", "PALO", "PICO", "COCA", "PERO", "DUKE", "RAYOS", "MESSI", "PALOS", "LIBRO", "LLAVE", "BALON", "CINCO"];
-        this.categoriaDeporte = [];
+        this.categoriaDeporte = ["MESSI", "BALON"];
         this.categoriaUCB = [];
         this.categoriaSistemas = [];
         this.tamPalabrasSeleccionables = this.palabrasSeleccionables.length;

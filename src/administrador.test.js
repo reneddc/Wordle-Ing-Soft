@@ -57,3 +57,26 @@ describe("E. DEFINIR BANCO DE PALABRAS", () => {
         expect(listaPalabrasSistemas[listaPalabrasSistemas.length - 1]).toEqual("WIFI");
     });
 });
+
+
+describe("F. DEFINIR MODALIDADES DE JUEGO", () => {
+    let wordleF = new Wordle();
+    wordleF.definirNuevaPalabra("BENZEMA");
+    wordleF.definirCategorias(["Deporte"]);
+    wordleF.definirNuevaPalabra("RONALDO");
+    wordleF.definirCategorias(["Deporte"]);
+    wordleF.definirNuevaPalabra("KOBE");
+    wordleF.definirCategorias(["Deporte"]);
+    wordleF.definirNuevaPalabra("NEYMAR");
+    wordleF.definirCategorias(["Deporte"]);
+    
+    //HDU 2
+
+    it("1. Si se presiona el botón de la categoría <DEPORTES> debería elegir una palabra secreta entre su lista de palabras como <MESSI, RONALDO, KOBE, NEYMAR>" , () => {
+        wordleF.definirPalabraSecreta("Deporte");
+        let palabraSecreta = wordleF.obtenerPalabraSecreta();
+        let listaDeportes = wordleF.obtenerNuevaPalabra();
+        expect(listaDeportes).toContain(palabraSecreta);
+    });
+
+});

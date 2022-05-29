@@ -14,7 +14,7 @@ class Wordle{
         this.categoria = [];
     }
 
-    definirPalabraSecreta(){
+    definirPalabraSecreta(categoria=null){
         this.palabraSecreta = this.funcionesWordle.definirPalabraSecretaAlAzar();
         this.definirTamPalabraSecreta();
         this.historialIntentos = this.funcionesWordle.definirHistorialIntentos();
