@@ -48,6 +48,7 @@ const formSalirBancoPalabras = document.querySelector("#salir-banco-palabras-for
 const formCategoriaDeportes = document.querySelector("#juego-categoria-deporte");
 const formCategoriaUCB = document.querySelector("#juego-categoria-ucb");
 const formCategoriaSistemas = document.querySelector("#juego-categoria-sistemas");
+const formBotonPista = document.querySelector("#boton-pista");
 
 //INPUTS
 
@@ -285,4 +286,15 @@ formCategoriaUCB.addEventListener("submit", (event) => {
 formCategoriaSistemas.addEventListener("submit", (event) => {
   event.preventDefault();
   jugarCategoria("Sistemas");
+});
+
+formBotonPista.addEventListener("submit", (event) => {
+  event.preventDefault();
+  let posicion = wordle.obtenerPosicionPista();
+  alert (posicion);
+  let pista = wordle.obtenerPista();
+  alert (pista);
+  let inputId = `#input-${posicion}`;
+  let intentoPistaPosicion = document.querySelector(inputId);
+  intentoPistaPosicion.value = pista;
 });
