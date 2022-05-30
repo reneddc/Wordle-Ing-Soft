@@ -1,6 +1,13 @@
 <html>
   <head>
     <script type="module" src="./src/presenter.js"></script>
+    <script type="text/javascript">  
+        function movetoNext(current, nextFieldID) {  
+            if (current.value.length >= current.maxLength) {  
+              document.getElementById(nextFieldID).focus();  
+            }  
+        }  
+    </script>
     <link rel="stylesheet" href="./style/styleUordel.css">
 </head>
   <body>
