@@ -104,9 +104,10 @@
   <!-------------------------------------------VISTA CAMPO DE JUEGO-------------------------------------------------->
 
   <div id="vista-campo-juego" style="display: none;">
-      <div id="intentos-realizados"></div>
+    <div id="contenedor-campo-juego">
       <form id="historial-intentos-form"></form>
       <form id="ingresar-intento-form"></form>
+    </div>
   </div>
 
   <!-------------------------------------------VISTA TUTORIAL-------------------------------------------------->
@@ -136,69 +137,61 @@
 
   <div id="vista-modalidades" style = "display: none;">
     <h2 class="titulo-vista">MODALIDADES DE JUEGO</h2><br>
-    <form id="juego-rapido-form">
-        <div id="descripcion-juego-rapido">
-          <h2> Juego Rápido </h2>
-          <h5> Adivinar una palabra cualquiera elegida al azar </h5>
-        </div>
-          <input type="submit" class="submit" value="JUEGO RÁPIDO" />
-    </form>
+    <div id="contenedor-modalidades">
+        <form id="juego-rapido-form">
+            <h2 class="titulo-modalidad"> Juego Rápido </h2>
+            <h5> Adivinar una palabra cualquiera elegida al azar </h5>
+            <input type="submit" class="submit" value="JUEGO RÁPIDO" />
+        </form>
 
-    <h2> CATEGORÍAS DE JUEGO</h2>
-    <h5> Adivinar una palabra al azar de la temática deerminada.</h5>
+        <h2 class="titulo-modalidad"> CATEGORÍAS DE JUEGO</h2>
+        <h5> Adivinar una palabra al azar de la temática deerminada.</h5>
 
-    <form id="juego-categoria-deporte">
-      <div>
-        <h2> Deportes </h2>
-      </div>
-        <input type="submit" class="submit" value="JUGAR" />
-    </form>
-    <form id="juego-categoria-ucb">
-      <div>
-        <h2> La Cato </h2>
-      </div>
-        <input type="submit" class="submit" value="JUGAR" />
-    </form>
-    <form id="juego-categoria-sistemas">
-      <div>
-        <h2> Sistemas </h2>
-      </div>
-        <input type="submit" class="submit" value="JUGAR" />
-    </form>
-
+        <form id="juego-categoria-deporte">
+            <h2 class="titulo-modalidad"> Deportes </h2>
+            <input type="submit" class="submit" value="JUGAR" />
+        </form>
+        <form id="juego-categoria-ucb">
+            <h2 class="titulo-modalidad"> La Cato </h2>
+            <input type="submit" class="submit" value="JUGAR" />
+        </form>
+        <form id="juego-categoria-sistemas">
+            <h2 class="titulo-modalidad"> Sistemas </h2>
+            <input type="submit" class="submit" value="JUGAR" />
+        </form>
+    </div>
   </div>
 
   <!-------------------------------------------VISTA PERDEDOR-------------------------------------------------->
 
   <div id="vista-perdedor" style = "display:none;">
-    <h2 class="titulo-vista"> PERDISTE JAJAJAJAJ </h2>
+      <h2 class="titulo-vista"> PERDISTE JAJAJAJAJ </h2>
+      <div id="contenedor-campo-juego">
+          <form id="perdedor-form"></form>
+          
+          <form id="perdedor-form-volver-jugar-rand">
+            <input type="submit" class="submit" value="CAMBIAR PALABRA">
+          </form>
 
-    <form id="perdedor-form">
-    </form>
-    
-    <form id="perdedor-form-volver-jugar-rand">
-      <input type="submit" class="submit" value="CAMBIAR PALABRA">
-    </form>
-    <form id="perdedor-form-volver-jugar-same">
-      <input type="submit" class="submit" value="SEGUIR INTENTANDO">
-    </form>
+          <form id="perdedor-form-volver-jugar-same">
+            <input type="submit" class="submit" value="SEGUIR INTENTANDO">
+          </form>
+      </div>
   </div>
 
   <!-------------------------------------------VISTA GANADOR-------------------------------------------------->
 
   <div id="vista-ganador" style = "display: none;">
-    <h2 class="titulo-vista"> BUENA, GANASTE :D</h2>
-    <form id="palabra-secreta-form">
-    </form>
-    <form id="ganador-form">
-      <div>
-        <h5>Vuelve a jugar</h5>
-      </div>
-    </form>
+      <h2 class="titulo-vista"> BUENA, GANASTE :D</h2>
+      <div id="contenedor-campo-juego">
+          <form id="palabra-secreta-form"></form>
 
-    <form id="ganador-form-volver-jugar">
-      <input type="submit" class="submit" value="VOLVER A JUGAR">
-    </form>
+          <form id="ganador-form"></form>
+      
+          <form id="ganador-form-volver-jugar">
+            <input type="submit" class="submit" value="VOLVER A JUGAR">
+          </form>
+      </div>
   </div>
 
   </body>

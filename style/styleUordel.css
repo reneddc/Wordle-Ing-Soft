@@ -117,21 +117,11 @@
     /*border-radius: 30%*/
 }
 
-#historial-intentos-form, #perdedor-form, #ganador-form{
-    padding: 20 0 0 520;
-}
-
-#ingresar-intento-form{
-    padding: 20 0 0 520;
-}
-
-#ingresar-intento-form{
-    padding: 20 0 0 520;
-}
-
 .ingresar-palabra-boton{
     margin-left: 93px;
+
 }
+
 
 .titulo-vista{
     margin: 10 20 10 0;
@@ -176,4 +166,38 @@ input[type="checkbox"]:checked{
     border-color: rgb(148, 147, 147);
     border-style: solid;
     border-width: 3px;
+}
+
+.descripcion-opciones{
+    color: rgb(148, 147, 147);
+}
+
+#contenedor-campo-juego, #juego-rapido-form, #juego-categoria-deporte, #juego-categoria-ucb, #juego-categoria-sistemas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contenedor-modalidades{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#juego-rapido-form{
+    margin-bottom: 10px;
+}
+
+#juego-categoria-deporte, #juego-categoria-ucb, #juego-categoria-sistemas{
+    margin-top: 10px;
+}
+
+.palabra-secreta{
+    font-weight: bold;
+    color: rgb(247, 147, 30);
+    background-color: rgb(0, 74, 173);
+}
+
+.titulo-modalidad{
+    color: rgb(0, 74, 173);
 }
