@@ -57,6 +57,7 @@ const nuevaPalabra = document.querySelector("#nueva-palabra");
 const categoriaDeporte = document.querySelector("#categoria-deporte");
 const categoriaUCB = document.querySelector("#categoria-ucb");
 const categoriaSistemas = document.querySelector("#categoria-sistemas");
+const botonPista = document.querySelector("#boton-mostrar-pista");
 
 //GenerarVistas
 
@@ -73,6 +74,7 @@ function mostrarVistaCampoJuego(){
   refrescarHistorialIntentos();
   vistaCampoJuego.style.display = "block";
   navigator.style.display = "block";
+  mostrarVista(botonPista);
 }
 
 function mostrarIntentosRealizados(){
@@ -206,7 +208,6 @@ formReintentarGanadorNuevaPalabra.addEventListener("submit", (event)=>{
   event.preventDefault();
   wordle.definirPalabraSecreta(categoria);
   palabraSecreta = wordle.obtenerPalabraSecreta();
-  alert(palabraSecreta);
   tamPalabraSecreta = palabraSecreta.length;
   listaIntentos = wordle.obtenerHistorialIntentos();
   ocultarVista(vistaGanador);
@@ -291,10 +292,9 @@ formCategoriaSistemas.addEventListener("submit", (event) => {
 formBotonPista.addEventListener("submit", (event) => {
   event.preventDefault();
   let posicion = wordle.obtenerPosicionPista();
-  alert (posicion);
   let pista = wordle.obtenerPista();
-  alert (pista);
   let inputId = `#input-${posicion}`;
   let intentoPistaPosicion = document.querySelector(inputId);
   intentoPistaPosicion.value = pista;
+  ocultarVista(botonPista);
 });
