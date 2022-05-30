@@ -25,6 +25,7 @@ const vistaPerdedor = document.querySelector("#vista-perdedor");
 const vistaGanador = document.querySelector("#vista-ganador");
 const vistaRegistrarseAdmin = document.querySelector("#vista-registro-admistrador");
 const vistaBancoPalabras = document.querySelector("#vista-banco-palabras");
+const navigator = document.querySelector("#navigator");
 
 
 //FORMULARIOS
@@ -70,6 +71,7 @@ function mostrarVistaCampoJuego(){
   formIntento.innerHTML = generarHtmlIngresarIntento(tamPalabraSecreta);
   refrescarHistorialIntentos();
   vistaCampoJuego.style.display = "block";
+  navigator.style.display = "block";
 }
 
 function mostrarIntentosRealizados(){
@@ -93,6 +95,7 @@ function mostrarVistaPerdedor(resultadoJuego){
   let listaPistas = wordle.obtenerListaPistas();
   if(resultadoJuego == "Perdedor"){
     vistaPerdedor.style.display = "block";
+    navigator.style.display = "block";
     ocultarVista(vistaCampoJuego);
     formPerdedor.innerHTML = generarHtmlHistorialIntentos(tamPalabraSecreta, listaIntentos , listaPistas);
   }
@@ -102,6 +105,7 @@ function mostrarVistaGanador(resultadoJuego){
   let listaPistas = wordle.obtenerListaPistas();
   if(resultadoJuego == "Ganador"){
     vistaGanador.style.display = "block";
+    navigator.style.display = "block";
     ocultarVista(vistaCampoJuego);
     formPalabraSecreta.innerHTML = generarHtmlPalabraSecreta(tamPalabraSecreta, palabraSecreta);
     formGanador.innerHTML = generarHtmlHistorialIntentos(tamPalabraSecreta, listaIntentos , listaPistas);
@@ -175,13 +179,15 @@ formIntento.addEventListener("submit", (event) => {
 formTutorial.addEventListener("submit", (event) => {
   event.preventDefault();
   ocultarVista(vistaPantallaPrincipal);
-  ocultarVista(vistaTutorial);
+  mostrarVista(vistaTutorial);
+  navigator.style.display = "block";
 });
 
 formModalidades.addEventListener("submit", (event) => {
   event.preventDefault();
   ocultarVista(vistaPantallaPrincipal);
   mostrarVista(vistaModalidades);
+  navigator.style.display = "block";
 });
 
 formReintentarPerdedorNuevaPalabra.addEventListener("submit", (event)=>{
@@ -221,6 +227,7 @@ formAdministrador.addEventListener("submit", (event) => {
   event.preventDefault();
   ocultarVista(vistaPantallaPrincipal);
   mostrarVista(vistaRegistrarseAdmin);
+  navigator.style.display = "block";
 });
 
 formRegistroAdmin.addEventListener("submit", (event) => {
@@ -229,6 +236,7 @@ formRegistroAdmin.addEventListener("submit", (event) => {
   if(password == passwordAdministrador){
     ocultarVista(vistaRegistrarseAdmin);
     mostrarVista(vistaBancoPalabras);
+    navigator.style.display = "block";
   }else{
     alert("Contraseña incorrecta. Intente de nuevo.");
   }
@@ -260,6 +268,7 @@ formNuevaPalabra.addEventListener("submit", (event) => {
 formSalirBancoPalabras.addEventListener("submit", (event) => {
   event.preventDefault();
   ocultarVista(vistaBancoPalabras);
+  navigator.style.display = "none";
   mostrarVista(vistaPantallaPrincipal);
 });
 

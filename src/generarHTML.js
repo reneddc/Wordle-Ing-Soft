@@ -7,7 +7,7 @@ function generarHtmlIngresarIntento(tamPalabraSecreta){
         if(i < tamPalabraSecreta - 1){
             codigoInputs = `<input type="text" id="input-${i}" class="ingresar-intento" size="1" maxlength="1" onkeyup="this.value = this.value.toUpperCase(); movetoNext(this,'input-${i+1}');">`;
         }else{
-            codigoInputs = `<input type="text" id="input-${i}" class="ingresar-intento" size="1" maxlength="1" onkeyup="this.value = this.value.toUpperCase();">`;
+            codigoInputs = `<input type="text" id="input-${i}" class="ingresar-intento" size="1" maxlength="1" onkeyup="this.value = this.value.toUpperCase();"><br>`;
         }
         codigoFormulario = codigoFormulario + codigoInputs;
     }

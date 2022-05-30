@@ -1,19 +1,25 @@
 <html>
   <head>
-    <script type="module" src="./src/presenter.js"></script>
-    <script type="text/javascript">  
-        function movetoNext(current, nextFieldID) {  
-            if (current.value.length >= current.maxLength) {  
-              document.getElementById(nextFieldID).focus();  
-            }  
-        }  
-    </script>
-    
-    <link rel="stylesheet" href="./style/styleUordel.css">
-</head>
+      <script type="module" src="./src/presenter.js"></script>
+      <script type="text/javascript">  
+          function movetoNext(current, nextFieldID) {  
+              if (current.value.length >= current.maxLength) {  
+                document.getElementById(nextFieldID).focus();  
+              }  
+          }  
+      </script>
+      
+      <link rel="stylesheet" href="./style/styleUordel.css">
+  </head>
+
   <body>
 
-    <!-------------------------------------------VISTA PRINCIPAL-------------------------------------------------->
+  <!-------------------------------------------NAVIGATOR-------------------------------------------------->
+  <div id="navigator" style = "display:none;">
+    <img id="logo-vista-principal" src="./imagenes/UORDEL Logo Navigator.png" alt="Logo_UORDEL" height="100px">
+  </div>
+
+  <!-------------------------------------------VISTA PRINCIPAL-------------------------------------------------->
 
   <div id="vista-Principal">
 
@@ -57,30 +63,36 @@
 
   </div>
  
+  <!-------------------------------------------VISTA REGISTRARSE COMO ADMIN-------------------------------------------------->
+
+
   <div id="vista-registro-admistrador" style = "display:none;"> 
-      <h2> REGISTRARSE ADMIN </h2>
-      <form id="registro-admin-form" class="opciones-vista-principal">
-          <label for="password-admin">Ingrese Contraseña: </label>
+      <h2 class="titulo-vista">REGISTRARSE EN MODO ADMINISTRADOR</h2>
+      <form id="registro-admin-form">
+          <label for="password-admin" class="label-input">Ingrese Contraseña: </label>
           <input type="password" id="password-admin" name="password-admin" class="contrasenia"/>
           <input type="submit" value="ACEPTAR" class="submit"/>
       </form>
   </div>
 
+  <!-------------------------------------------VISTA BANCO DE PALABRAS-------------------------------------------------->
 
   <div id="vista-banco-palabras" style = "display:none;"> 
-      <h2> Banco de Palabras </h2>
+      <h2 class="titulo-vista"> BANCO DE PALABRAS</h2>
       <form id="nueva-palabra-form">
-        <label for="nueva-palabra">Ingrese Nueva Palabra: </label>
+        <label for="nueva-palabra" class="label-input">Ingrese Nueva Palabra: </label>
         <input type="text" id="nueva-palabra" name="nueva-palabra" onkeyup="this.value = this.value.toUpperCase();"/><br>
+        <div>
 
-        <input type="checkbox" name="categoria1" value="Deporte" id="categoria-deporte">
-        <label for="categoria1">Deporte</label><br>
-
-        <input type="checkbox" name="categoria2" value="UCB" id="categoria-ucb">
-        <label for="categoria2">UCB</label><br>
-
-        <input type="checkbox" name="categoria3" value="Sistemas" id="categoria-sistemas">
-        <label for="categoria3">Sistemas</label><br>
+            <input type="checkbox" name="categoria1" value="Deporte" id="categoria-deporte">
+            <label for="categoria1" class="categorias-nueva-palabra">Deporte</label><br>
+    
+            <input type="checkbox" name="categoria2" value="UCB" id="categoria-ucb">
+            <label for="categoria2" class="categorias-nueva-palabra">UCB</label><br>
+    
+            <input type="checkbox" name="categoria3" value="Sistemas" id="categoria-sistemas">
+            <label for="categoria3" class="categorias-nueva-palabra">Sistemas</label><br>
+        </div>
 
         <input type="submit" value="ACEPTAR" class="submit"/>
       </form>
@@ -89,16 +101,18 @@
       </form>
   </div>
 
+  <!-------------------------------------------VISTA CAMPO DE JUEGO-------------------------------------------------->
 
   <div id="vista-campo-juego" style="display: none;">
-      <h2 id="titulo-campo-juego">Campo de Juego</h2><br>
       <div id="intentos-realizados"></div>
       <form id="historial-intentos-form"></form>
       <form id="ingresar-intento-form"></form>
   </div>
 
+  <!-------------------------------------------VISTA TUTORIAL-------------------------------------------------->
+
   <div id="vista-tutorial" style="display: none;">
-    <h2>Tutorial</h2>
+    <h2 class="titulo-vista">TUTORIAL</h2>
     <p> Adivina la palabra oculta en seis intentos.</p>
     <p> Cada intento debe ser una palabra válida de 5 letras.</p>
     <p> Después de cada intento el color de las letras cambia para mostrar qué tan cerca estás de acertar la palabra. </p>
@@ -118,8 +132,10 @@
     <p> Ingresar una nueva palabra.</p>
   </div>
    
+  <!-------------------------------------------VISTA MODALIDADES-------------------------------------------------->
+
   <div id="vista-modalidades" style = "display: none;">
-    <h2>MODALIDADES DE JUEGO</h2><br>
+    <h2 class="titulo-vista">MODALIDADES DE JUEGO</h2><br>
     <form id="juego-rapido-form">
         <div id="descripcion-juego-rapido">
           <h2> Juego Rápido </h2>
@@ -152,10 +168,11 @@
 
   </div>
 
+  <!-------------------------------------------VISTA PERDEDOR-------------------------------------------------->
+
   <div id="vista-perdedor" style = "display:none;">
-    <h2> PERDISTE JAJAJAJAJ </h2>
-    <h2>¿Te rindes tan rapido?</h2>
-    
+    <h2 class="titulo-vista"> PERDISTE JAJAJAJAJ </h2>
+
     <form id="perdedor-form">
     </form>
     
@@ -165,12 +182,12 @@
     <form id="perdedor-form-volver-jugar-same">
       <input type="submit" class="submit" value="SEGUIR INTENTANDO">
     </form>
-    
   </div>
 
+  <!-------------------------------------------VISTA GANADOR-------------------------------------------------->
+
   <div id="vista-ganador" style = "display: none;">
-    <h2> buena, GANASTE :D</h2>
-    <h2>¿Ganas de más?</h2>
+    <h2 class="titulo-vista"> BUENA, GANASTE :D</h2>
     <form id="palabra-secreta-form">
     </form>
     <form id="ganador-form">
