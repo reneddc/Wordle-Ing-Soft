@@ -256,3 +256,21 @@ describe("J. GANAR", () => {
   });
 });
 
+
+
+//ITERACIÓN 2
+
+
+describe("H. INGRESAR INTENTOS", () => {
+  let wordleH = new Wordle();
+  
+  //HDU 1
+  it("1. Si la palabra secreta es <HOLA> y se presiona el botón <PISTA> debería mostrar la letra al azar de la palabra secreta como <L>", ()=> {
+    wordleH.definirPalabraSecreta();
+    let palabraSecreta = wordleH.obtenerPalabraSecreta();
+    let letra = wordleH.obtenerPista();
+    expect(palabraSecreta).toContain(letra);
+  });
+
+});
+
