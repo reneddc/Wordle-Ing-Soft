@@ -53,58 +53,19 @@ const categoriaUCB = document.querySelector("#categoria-ucb");
 const categoriaSistemas = document.querySelector("#categoria-sistemas");
 
 //GenerarVistas
-function mostrarVistaModalidades(){
-  vistaModalidades.style.display = "block";
+
+function ocultarVista(vista){
+  vista.style.display = "none";
+}
+
+function mostrarVista(vista){
+  vista.style.display = "block";
 }
 
 function mostrarVistaCampoJuego(){
   formIntento.innerHTML = generarHtmlIngresarIntento(tamPalabraSecreta);
   refrescarHistorialIntentos();
   vistaCampoJuego.style.display = "block";
-}
-
-function mostrarVistaTutorial(){
-  vistaTutorial.style.display = "block";
-}
-
-function mostrarVistaBancoPalabras(){
-  vistaBancoPalabras.style.display = "block";
-}
-
-function ocultarVistaRegistrarseAdmin(){
-  vistaRegistrarseAdmin.style.display = "none";
-}
-
-function ocultarVistaModalidades(){
-  vistaModalidades.style.display = "none";
-}
-
-function ocultarVistaPrincipal(){
-  vistaPantallaPrincipal.style.display = "none";
-}
-
-function ocultarVistaCampoJuego(){
-  vistaCampoJuego.style.display = "none";
-}
-
-function ocultarVistaPerdedor(){
- vistaPerdedor.style.display = "none";
-}
-
-function ocultarVistaGanador(){
-  vistaGanador.style.display = "none";
-}
-
-function ocultarVistaBancoPalabras(){
-  vistaBancoPalabras.style.display = "none";
-}
-
-function mostraVistaPrincipal(){
-  vistaPantallaPrincipal.style.display = "block";
-}
-
-function mostrarVistaRegistrarseAdmin(){ //mostrar vista de registrarse como admin
-  vistaRegistrarseAdmin.style.display = "block";
 }
 
 function mostrarIntentosRealizados(){
@@ -128,7 +89,7 @@ function mostrarVistaPerdedor(resultadoJuego){
   let listaPistas = wordle.obtenerListaPistas();
   if(resultadoJuego == "Perdedor"){
     vistaPerdedor.style.display = "block";
-    ocultarVistaCampoJuego();
+    ocultarVista(vistaCampoJuego);
     formPerdedor.innerHTML = generarHtmlHistorialIntentos(tamPalabraSecreta, listaIntentos , listaPistas);
   }
 }
@@ -137,7 +98,7 @@ function mostrarVistaGanador(resultadoJuego){
   let listaPistas = wordle.obtenerListaPistas();
   if(resultadoJuego == "Ganador"){
     vistaGanador.style.display = "block";
-    ocultarVistaCampoJuego();
+    ocultarVista(vistaCampoJuego);
     formPalabraSecreta.innerHTML = generarHtmlPalabraSecreta(tamPalabraSecreta, palabraSecreta);
     formGanador.innerHTML = generarHtmlHistorialIntentos(tamPalabraSecreta, listaIntentos , listaPistas);
   }
@@ -157,6 +118,7 @@ function ingresarCategorias(){
   return listaCategorias;
 }
 
+
 //EVENTOS
 formJuegoRapido.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -166,8 +128,8 @@ formJuegoRapido.addEventListener("submit", (event) => {
   tamPalabraSecreta = palabraSecreta.length;
 
   listaIntentos = wordle.obtenerHistorialIntentos();
-  ocultarVistaPrincipal();
-  ocultarVistaModalidades();
+  ocultarVista(vistaModalidades);
+  
   mostrarVistaCampoJuego();
 });
 
@@ -179,8 +141,7 @@ formJuegoRapidoPrincipal.addEventListener("submit", (event) => {
   tamPalabraSecreta = palabraSecreta.length;
 
   listaIntentos = wordle.obtenerHistorialIntentos();
-  ocultarVistaPrincipal();
-  ocultarVistaModalidades();
+  ocultarVista(vistaPantallaPrincipal);
   mostrarVistaCampoJuego();
 });
 
@@ -204,14 +165,14 @@ formIntento.addEventListener("submit", (event) => {
 
 formTutorial.addEventListener("submit", (event) => {
   event.preventDefault();
-  ocultarVistaPrincipal();
-  mostrarVistaTutorial();
+  ocultarVista(vistaPantallaPrincipal);
+  ocultarVista(vistaTutorial);
 });
 
 formModalidades.addEventListener("submit", (event) => {
   event.preventDefault();
-  ocultarVistaPrincipal();
-  mostrarVistaModalidades();
+  ocultarVista(vistaPantallaPrincipal);
+  mostrarVista(vistaModalidades);
 });
 
 formReintentoPerRand.addEventListener("submit", (event)=>{
@@ -220,7 +181,7 @@ formReintentoPerRand.addEventListener("submit", (event)=>{
   palabraSecreta = wordle.obtenerPalabraSecreta();
   tamPalabraSecreta = palabraSecreta.length;
   listaIntentos = wordle.obtenerHistorialIntentos();
-  ocultarVistaPerdedor();
+  ocultarVista(vistaPerdedor);
   mostrarVistaCampoJuego();
 });
 
@@ -230,7 +191,7 @@ formNuevaGanador.addEventListener("submit", (event)=>{
   palabraSecreta = wordle.obtenerPalabraSecreta();
   tamPalabraSecreta = palabraSecreta.length;
   listaIntentos = wordle.obtenerHistorialIntentos();
-  ocultarVistaGanador();
+  ocultarVista(vistaGanador);
   mostrarVistaCampoJuego();
 });
 
@@ -240,23 +201,23 @@ formReintentoPerSame.addEventListener("submit", (event)=>{
   palabraSecreta = wordle.obtenerPalabraSecreta();
   tamPalabraSecreta = palabraSecreta.length;
   listaIntentos = wordle.obtenerHistorialIntentos();
-  ocultarVistaPerdedor();
+  ocultarVista(vistaPerdedor);
   mostrarVistaCampoJuego();
 });
 
 
 formAdministrador.addEventListener("submit", (event) => {
   event.preventDefault();
-  ocultarVistaPrincipal();
-  mostrarVistaRegistrarseAdmin();
+  ocultarVista(vistaPantallaPrincipal);
+  mostrarVista(vistaRegistrarseAdmin);
 });
 
 formRegistroAdmin.addEventListener("submit", (event) => {
   event.preventDefault();
   let password = passwordAdmin.value;
   if(password == passwordAdministrador){
-    ocultarVistaRegistrarseAdmin();
-    mostrarVistaBancoPalabras();
+    ocultarVista(vistaRegistrarseAdmin);
+    mostrarVista(vistaBancoPalabras);
   }else{
     alert("Contraseña incorrecta. Intente de nuevo.");
   }
@@ -287,6 +248,6 @@ formNuevaPalabra.addEventListener("submit", (event) => {
 
 formSalirBancoPalabras.addEventListener("submit", (event) => {
   event.preventDefault();
-  ocultarVistaBancoPalabras();
-  mostraVistaPrincipal();
+  ocultarVista(vistaBancoPalabras);
+  mostrarVista(vistaPantallaPrincipal);
 });
