@@ -3,9 +3,9 @@ import WordleError from "./ExcepcionesWordle";
 class FuncionesWordle{
     constructor(){
         this.palabrasSeleccionables = ["HOJA", "HOLA", "LOBO", "COLA", "PALO", "PICO", "COCA", "PERO", "DUKE", "RAYOS", "MESSI", "PALOS", "LIBRO", "LLAVE", "BALON", "CINCO"];
-        this.categoriaDeporte = ["MESSI", "BALON"];
-        this.categoriaUCB = [];
-        this.categoriaSistemas = [];
+        this.categoriaDeporte = ["MESSI", "BALON", "DUKE", "CINCO"];
+        this.categoriaUCB = ["LOBO", "LIBRO", "LLAVE"];
+        this.categoriaSistemas = ["HOLA", "PERO"];
         this.tamPalabrasSeleccionables = this.palabrasSeleccionables.length;
         this.listaIntentos = ["X", "X", "X", "X", "X", "X"];
         this.listaPistas = ["X", "X", "X", "X", "X", "X"];
@@ -66,7 +66,7 @@ class FuncionesWordle{
                             break;}
             case "Sistemas":{
                             posicion = Math.floor(Math.random() * this.categoriaDeporte.length);
-                            palabraSec = this.categoriaDeporte[posicion];
+                            palabraSec = this.categoriaSistemas[posicion];
                             break;}
             default: {
                             posicion = Math.floor(Math.random() * this.tamPalabrasSeleccionables);

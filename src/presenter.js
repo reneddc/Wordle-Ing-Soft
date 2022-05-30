@@ -13,6 +13,7 @@ let intento;
 let listaIntentos = [];
 let nroIntentos;
 let passwordAdministrador = "uordel8000";
+let categoria = "General";
 
 
 //VISTAS
@@ -36,13 +37,16 @@ const formJuegoRapidoPrincipal = document.querySelector("#juego-rapido-form-prin
 const formPerdedor = document.querySelector("#perdedor-form");
 const formGanador = document.querySelector("#ganador-form");
 const formPalabraSecreta = document.querySelector("#palabra-secreta-form");
-const formReintentoPerRand = document.querySelector("#perdedor-form-volver-jugar-rand")
-const formNuevaGanador=document.querySelector("#ganador-form-volver-jugar")
-const formReintentoPerSame = document.querySelector("#perdedor-form-volver-jugar-same")
+const formReintentarPerdedorNuevaPalabra = document.querySelector("#perdedor-form-volver-jugar-rand")
+const formReintentarGanadorNuevaPalabra = document.querySelector("#ganador-form-volver-jugar")
+const formReintentarMismaPalabra = document.querySelector("#perdedor-form-volver-jugar-same")
 const formAdministrador = document.querySelector("#administrador-form")
 const formRegistroAdmin = document.querySelector("#registro-admin-form");
 const formNuevaPalabra = document.querySelector("#nueva-palabra-form");
 const formSalirBancoPalabras = document.querySelector("#salir-banco-palabras-form");
+const formCategoriaDeportes = document.querySelector("#juego-categoria-deporte");
+const formCategoriaUCB = document.querySelector("#juego-categoria-ucb");
+const formCategoriaSistemas = document.querySelector("#juego-categoria-sistemas");
 
 //INPUTS
 
@@ -104,6 +108,8 @@ function mostrarVistaGanador(resultadoJuego){
   }
 }
 
+//Funciones Auxiliares
+
 function ingresarCategorias(){
   let listaCategorias = ["General"];
   if(categoriaDeporte.checked){
@@ -118,19 +124,22 @@ function ingresarCategorias(){
   return listaCategorias;
 }
 
+function jugarCategoria(categoriaJuego){
+  wordle.definirPalabraSecreta(categoriaJuego);
+  categoria = categoriaJuego;
+  palabraSecreta = wordle.obtenerPalabraSecreta();
+  alert(palabraSecreta);
+  tamPalabraSecreta = palabraSecreta.length;
+  listaIntentos = wordle.obtenerHistorialIntentos();
+  ocultarVista(vistaModalidades);
+  mostrarVistaCampoJuego();
+}
+
 
 //EVENTOS
 formJuegoRapido.addEventListener("submit", (event) => {
   event.preventDefault();
-
-  wordle.definirPalabraSecreta();
-  palabraSecreta = wordle.obtenerPalabraSecreta();
-  tamPalabraSecreta = palabraSecreta.length;
-
-  listaIntentos = wordle.obtenerHistorialIntentos();
-  ocultarVista(vistaModalidades);
-  
-  mostrarVistaCampoJuego();
+  jugarCategoria("General");
 });
 
 formJuegoRapidoPrincipal.addEventListener("submit", (event) => {
@@ -175,27 +184,29 @@ formModalidades.addEventListener("submit", (event) => {
   mostrarVista(vistaModalidades);
 });
 
-formReintentoPerRand.addEventListener("submit", (event)=>{
+formReintentarPerdedorNuevaPalabra.addEventListener("submit", (event)=>{
   event.preventDefault();
-  wordle.definirPalabraSecreta();
+  wordle.definirPalabraSecreta(categoria);
   palabraSecreta = wordle.obtenerPalabraSecreta();
+  alert(palabraSecreta);
   tamPalabraSecreta = palabraSecreta.length;
   listaIntentos = wordle.obtenerHistorialIntentos();
   ocultarVista(vistaPerdedor);
   mostrarVistaCampoJuego();
 });
 
-formNuevaGanador.addEventListener("submit", (event)=>{
+formReintentarGanadorNuevaPalabra.addEventListener("submit", (event)=>{
   event.preventDefault();
-  wordle.definirPalabraSecreta();
+  wordle.definirPalabraSecreta(categoria);
   palabraSecreta = wordle.obtenerPalabraSecreta();
+  alert(palabraSecreta);
   tamPalabraSecreta = palabraSecreta.length;
   listaIntentos = wordle.obtenerHistorialIntentos();
   ocultarVista(vistaGanador);
   mostrarVistaCampoJuego();
 });
 
-formReintentoPerSame.addEventListener("submit", (event)=>{
+formReintentarMismaPalabra.addEventListener("submit", (event)=>{
   event.preventDefault();
   wordle.definirSecreta(wordle.obtenerPalabraSecreta());
   palabraSecreta = wordle.obtenerPalabraSecreta();
@@ -252,40 +263,17 @@ formSalirBancoPalabras.addEventListener("submit", (event) => {
   mostrarVista(vistaPantallaPrincipal);
 });
 
+formCategoriaDeportes.addEventListener("submit", (event) => {
+  event.preventDefault();
+  jugarCategoria("Deporte");
+});
 
+formCategoriaUCB.addEventListener("submit", (event) => {
+  event.preventDefault();
+  jugarCategoria("UCB");
+});
 
-function autojump(fieldName,nextFieldName,fakeMaxLength)
-{
-var myForm=document.forms[document.forms.length - 1];
-var myField=myForm.elements[fieldName];
-myField.nextField=myForm.elements[nextFieldName];
-
-if (myField.maxLength == null)
-   myField.maxLength=fakeMaxLength;
-
-myField.onkeydown=autojump_keyDown();
-myField.onkeyup=autojump_keyUp();
-}
-
-function autojump_keyDown()
-{
-this.beforeLength=this.value.length;
-downStrokeField=this;
-}
-
-function autojump_keyUp()
-{
-if (
-   (this == downStrokeField) && 
-   (this.value.length > this.beforeLength) && 
-   (this.value.length >= this.maxLength)
-   )
-   this.nextField.focus();
-downStrokeField=null;
-}
-
-function moveOnMax(field,nextFieldID){
-  if(field.value.length >= field.maxLength){
-    document.getElementById(nextFieldID).focus();
-  }
-}
+formCategoriaSistemas.addEventListener("submit", (event) => {
+  event.preventDefault();
+  jugarCategoria("Sistemas");
+});
