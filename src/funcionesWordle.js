@@ -209,6 +209,13 @@ class FuncionesWordle{
         }
         return resultado;
     }
+
+    obtenerPistaAlAzar(palabraSecreta)
+    {
+        let posicion = Math.floor(Math.random() * palabraSecreta.length);
+        let pista = palabraSecreta[posicion];
+        return pista;
+    }
 }
 
 export default FuncionesWordle;

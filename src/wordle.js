@@ -96,6 +96,10 @@ class Wordle{
     obtenerCategoriaSistemas(){
         return this.funcionesWordle.obtenerCategoriaSistemas();
     }
+
+    obtenerPista(){
+        return this.funcionesWordle.obtenerPistaAlAzar(this.palabraSecreta);
+    }
 }
 export default Wordle;
 
