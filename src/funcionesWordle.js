@@ -12,6 +12,7 @@ class FuncionesWordle{
         this.nroIntentos;
         this.cadenaResultado;
         this.copiaPalabraSecreta = [""];
+        this.posicionPista = 0;
     }
 
     definirCategorias(categoria){
@@ -212,9 +213,13 @@ class FuncionesWordle{
 
     obtenerPistaAlAzar(palabraSecreta)
     {
-        let posicion = Math.floor(Math.random() * palabraSecreta.length);
-        let pista = palabraSecreta[posicion];
+        let pista = palabraSecreta[this.posicionPista];
         return pista;
+    }
+
+    obtenerPosicionPistaAlAzar(palabraSecreta){
+        this.posicionPista = Math.floor(Math.random() * palabraSecreta.length);
+        return this.posicionPista;
     }
 }
 

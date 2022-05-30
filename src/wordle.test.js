@@ -269,7 +269,7 @@ describe("H. INGRESAR INTENTOS", () => {
     wordleH.definirPalabraSecreta();
     let palabraSecreta = wordleH.obtenerPalabraSecreta();
     let letra = wordleH.obtenerPista();
-    expect(palabraSecreta).toContain(letra);
+    expect(palabraSecreta[0]).toEqual(letra);
   });
 
   //HDU 2
@@ -277,8 +277,8 @@ describe("H. INGRESAR INTENTOS", () => {
   it("2. Si la palabra secreta es <HOLA> y se presiona el botón <PISTA> debería mostrar la letra al azar de la palabra secreta como <L> y la posición 3", ()=> {
     wordleH.definirPalabraSecreta();
     let palabraSecreta = wordleH.obtenerPalabraSecreta();
-    let letra = wordleH.obtenerPista();
     let posicion = wordleH.obtenerPosicionPista();
+    let letra = wordleH.obtenerPista();
     expect(palabraSecreta[posicion]).toEqual(letra);
   });
 

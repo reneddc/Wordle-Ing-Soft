@@ -100,6 +100,10 @@ class Wordle{
     obtenerPista(){
         return this.funcionesWordle.obtenerPistaAlAzar(this.palabraSecreta);
     }
+
+    obtenerPosicionPista(){         
+        return this.funcionesWordle.obtenerPosicionPistaAlAzar(this.palabraSecreta);
+    }
 }
 export default Wordle;
 
