@@ -41,11 +41,16 @@ const formReintentoPerRand = document.querySelector("#perdedor-form-volver-jugar
 const formNuevaGanador=document.querySelector("#ganador-form-volver-jugar")
 const formReintentoPerSame = document.querySelector("#perdedor-form-volver-jugar-same")
 const formAdministrador = document.querySelector("#administrador-form")
-const formRegistroAdmin = document.querySelector("#registro-admin-form")
+const formRegistroAdmin = document.querySelector("#registro-admin-form");
+const formNuevaPalabra = document.querySelector("#nueva-palabra-form");
 
 //INPUTS
 
 const passwordAdmin = document.querySelector("#password-admin");
+const nuevaPalabra = document.querySelector("#nueva-palabra");
+const categoriaDeporte = document.querySelector("#categoria-deporte");
+const categoriaUCB = document.querySelector("#categoria-ucb");
+const categoriaSistemas = document.querySelector("#categoria-sistemas");
 
 //GenerarVistas
 function mostrarVistaModalidades(){
@@ -98,12 +103,13 @@ function mostrarIntentosRealizados(){
   let palabraIntento = wordle.obtenerIntento();
   if(intento != palabraIntento){
     alert(palabraIntento);
-    intentosRealizados.innerHTML = "";
+    
   }
   else
   {
     refrescarHistorialIntentos();
   }
+  formIntento.innerHTML = generarHtmlIngresarIntento(tamPalabraSecreta);
 }
 
 function refrescarHistorialIntentos(){
@@ -129,6 +135,20 @@ function mostrarVistaGanador(resultadoJuego){
     formPalabraSecreta.innerHTML = generarHtmlPalabraSecreta(tamPalabraSecreta, palabraSecreta);
     formGanador.innerHTML = generarHtmlHistorialIntentos(tamPalabraSecreta, listaIntentos , listaPistas);
   }
+}
+
+function ingresarCategorias(){
+  let listaCategorias = ["General"];
+  if(categoriaDeporte.checked){
+    listaCategorias.push("Deporte");
+  }
+  if(categoriaUCB.checked){
+    listaCategorias.push("UCB");
+  }
+  if(categoriaSistemas.checked){
+    listaCategorias.push("Sistemas");
+  }
+  return listaCategorias;
 }
 
 //EVENTOS
@@ -234,4 +254,27 @@ formRegistroAdmin.addEventListener("submit", (event) => {
   }else{
     alert("Contraseña incorrecta. Intente de nuevo.");
   }
+  passwordAdmin.value = "";
+});
+
+formNuevaPalabra.addEventListener("submit", (event) => {
+  event.preventDefault();
+  let listaCategorias = [];
+  wordle.definirNuevaPalabra(nuevaPalabra.value);
+  let nuevaPalabraResp = wordle.obtenerNuevaPalabra();
+  if(nuevaPalabraResp == nuevaPalabra.value){
+    listaCategorias = ingresarCategorias();
+    wordle.definirCategorias(listaCategorias);
+    alert(wordle.obtenerPalabrasSeleccionables());
+    alert(wordle.obtenerCategoriaDeporte());
+    alert(wordle.obtenerCategoriaUCB());
+    alert(wordle.obtenerCategoriaSistemas());
+  }
+  else{
+    alert(nuevaPalabraResp);
+  }
+  nuevaPalabra.value = "";
+  categoriaDeporte.checked = false;
+  categoriaUCB.checked = false;
+  categoriaSistemas.checked = false;
 });

@@ -33,7 +33,7 @@ class FuncionesWordle{
     }
 
     definirNuevaPalabra(nuevaPalabra){
-        if(this.palabrasSeleccionables.includes(nuevaPalabra)){
+        if(nuevaPalabra == "" || this.palabrasSeleccionables.includes(nuevaPalabra)){
             throw new WordleError("Ya existe esa palabra.");
         }else{
             this.palabrasSeleccionables.push(nuevaPalabra);

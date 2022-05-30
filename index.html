@@ -60,8 +60,23 @@
 
 
   <div id="vista-banco-palabras" style = "display:none;"> 
-    <h2> Banco de Palabras </h2>
-</div>
+      <h2> Banco de Palabras </h2>
+      <form id="nueva-palabra-form">
+        <label for="nueva-palabra">Ingrese Nueva Palabra: </label>
+        <input type="text" id="nueva-palabra" name="nueva-palabra" onkeyup="this.value = this.value.toUpperCase();"/><br>
+
+        <input type="checkbox" name="categoria1" value="Deporte" id="categoria-deporte">
+        <label for="categoria1">Deporte</label><br>
+
+        <input type="checkbox" name="categoria2" value="UCB" id="categoria-ucb">
+        <label for="categoria2">UCB</label><br>
+
+        <input type="checkbox" name="categoria3" value="Sistemas" id="categoria-sistemas">
+        <label for="categoria3">Sistemas</label><br>
+
+        <input type="submit" value="ACEPTAR" class="submit"/>
+      </form>
+  </div>
 
 
   <div id="vista-campo-juego" style="display: none;">
@@ -99,7 +114,7 @@
           <h2> Juego Rápido </h2>
           <h5> Adivinar una palabra cualquiera elegida al azar </h5>
         </div>
-          <input type="submit" value="Juego Rápido" />
+          <input type="submit" class="submit" value="JUEGO RÁPIDO" />
     </form>
   </div>
 
@@ -111,10 +126,10 @@
     </form>
     
     <form id="perdedor-form-volver-jugar-rand">
-      <input type="submit" value="Jugar otra vez con una diferente palabra">
+      <input type="submit" class="submit" value="CAMBIAR PALABRA">
     </form>
     <form id="perdedor-form-volver-jugar-same">
-      <input type="submit" value="Seguir intentando">
+      <input type="submit" class="submit" value="SEGUIR INTENTANDO">
     </form>
     
   </div>
@@ -131,7 +146,7 @@
     </form>
 
     <form id="ganador-form-volver-jugar">
-      <input type="submit" value="Vuelve a jugar">
+      <input type="submit" class="submit" value="VOLVER A JUGAR">
     </form>
   </div>
 
