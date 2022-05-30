@@ -18,7 +18,6 @@ let passwordAdministrador = "uordel8000";
 //VISTAS
 const vistaModalidades = document.querySelector("#vista-modalidades");
 const vistaCampoJuego = document.querySelector("#vista-campo-juego");
-const intentosRealizados = document.querySelector("#intentos-realizados");
 const vistaTutorial = document.querySelector("#vista-tutorial");
 const vistaPantallaPrincipal = document.querySelector("#vista-Principal");
 const vistaPerdedor = document.querySelector("#vista-perdedor");
@@ -43,6 +42,7 @@ const formReintentoPerSame = document.querySelector("#perdedor-form-volver-jugar
 const formAdministrador = document.querySelector("#administrador-form")
 const formRegistroAdmin = document.querySelector("#registro-admin-form");
 const formNuevaPalabra = document.querySelector("#nueva-palabra-form");
+const formSalirBancoPalabras = document.querySelector("#salir-banco-palabras-form");
 
 //INPUTS
 
@@ -95,6 +95,14 @@ function ocultarVistaGanador(){
   vistaGanador.style.display = "none";
 }
 
+function ocultarVistaBancoPalabras(){
+  vistaBancoPalabras.style.display = "none";
+}
+
+function mostraVistaPrincipal(){
+  vistaPantallaPrincipal.style.display = "block";
+}
+
 function mostrarVistaRegistrarseAdmin(){ //mostrar vista de registrarse como admin
   vistaRegistrarseAdmin.style.display = "block";
 }
@@ -103,7 +111,6 @@ function mostrarIntentosRealizados(){
   let palabraIntento = wordle.obtenerIntento();
   if(intento != palabraIntento){
     alert(palabraIntento);
-    
   }
   else
   {
@@ -128,8 +135,7 @@ function mostrarVistaPerdedor(resultadoJuego){
 
 function mostrarVistaGanador(resultadoJuego){
   let listaPistas = wordle.obtenerListaPistas();
-  if(resultadoJuego == "Ganador")
-  {
+  if(resultadoJuego == "Ganador"){
     vistaGanador.style.display = "block";
     ocultarVistaCampoJuego();
     formPalabraSecreta.innerHTML = generarHtmlPalabraSecreta(tamPalabraSecreta, palabraSecreta);
@@ -277,4 +283,10 @@ formNuevaPalabra.addEventListener("submit", (event) => {
   categoriaDeporte.checked = false;
   categoriaUCB.checked = false;
   categoriaSistemas.checked = false;
+});
+
+formSalirBancoPalabras.addEventListener("submit", (event) => {
+  event.preventDefault();
+  ocultarVistaBancoPalabras();
+  mostraVistaPrincipal();
 });
