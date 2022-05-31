@@ -40,9 +40,25 @@ describe("VISTAS", () => {
 });  
 
 
-//____________________________________ _______________________________________
+//____________________________________OTROS_______________________________________
 
+describe("OBTENER VALORES", () => {
+  beforeAll(() => {
+    document.body.innerHTML = fs.readFileSync("index.html", "utf8");
+    require("./presenter.js");
+  });
 
+  it("No se muestra ningun color si no se hizo un intento", () => {
+    
+    const botonJuegoRapido = document.querySelector("#boton-juego-rapido");
+    botonJuegoRapido.click();
+
+    const casillasIntento = document.querySelectorAll(".ingresar-intento");
+    for(let i=0; i<casillasIntento.length; i++){
+      expect(casillasIntento[i].value).toEqual("");
+    }
+  });
+});  
 
 
 //<TEST UI> <Borrar la pantalla principal y que muetre el campo de juego>
