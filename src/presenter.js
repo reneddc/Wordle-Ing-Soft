@@ -12,7 +12,7 @@ let tamPalabraSecreta;
 let intento;
 let listaIntentos = [];
 let nroIntentos;
-let passwordAdministrador = "uordel8000";
+let passwordAdministrador = "123";
 let categoria = "General";
 
 
@@ -44,7 +44,6 @@ const formReintentarMismaPalabra = document.querySelector("#perdedor-form-volver
 const formAdministrador = document.querySelector("#administrador-form")
 const formRegistroAdmin = document.querySelector("#registro-admin-form");
 const formNuevaPalabra = document.querySelector("#nueva-palabra-form");
-const formSalirBancoPalabras = document.querySelector("#salir-banco-palabras-form");
 const formCategoriaDeportes = document.querySelector("#juego-categoria-deporte");
 const formCategoriaUCB = document.querySelector("#juego-categoria-ucb");
 const formCategoriaSistemas = document.querySelector("#juego-categoria-sistemas");
@@ -266,13 +265,6 @@ formNuevaPalabra.addEventListener("submit", (event) => {
   categoriaDeporte.checked = false;
   categoriaUCB.checked = false;
   categoriaSistemas.checked = false;
-});
-
-formSalirBancoPalabras.addEventListener("submit", (event) => {
-  event.preventDefault();
-  ocultarVista(vistaBancoPalabras);
-  navigator.style.display = "none";
-  mostrarVista(vistaPantallaPrincipal);
 });
 
 formCategoriaDeportes.addEventListener("submit", (event) => {
