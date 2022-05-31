@@ -76,7 +76,7 @@ describe("CAMPO DE JUEGO AL INICIAR", () => {
     }
   });
 }); 
-*/
+
 describe("PRIMER INTENTO", () => {
   beforeAll(() => {
     document.body.innerHTML = fs.readFileSync("index.html", "utf8");
@@ -104,4 +104,30 @@ describe("PRIMER INTENTO", () => {
       expect(historialIntentos[i].value).toEqual(intento[i]);
     }
   });
-});
+});*/
+
+describe("VISTA MODALIDADES", () => {
+  beforeAll(() => {
+    document.body.innerHTML = fs.readFileSync("index.html", "utf8");
+    require("./presenter.js");
+  });
+
+  it("Borrar la pantalla principal y que muetre la vista de modalidades", () => {
+    let vistaPantallaPrincipal = document.querySelector("#vista-Principal");
+    let vistaModalidades = document.querySelector("#vista-modalidades");
+    let botonModalidades = document.querySelector("#boton-modalidades");
+    let stateNone = vistaPantallaPrincipal.style.display;//antes del click
+    let stateBlock = vistaModalidades.style.display;//antes del click
+
+    expect(stateNone).toEqual("");
+    expect(stateBlock).toEqual("none");
+
+    botonModalidades.click();
+
+    stateNone = vistaPantallaPrincipal.style.display;//después del click
+    stateBlock = vistaModalidades.style.display;//después del click
+
+    expect(stateBlock).toEqual("block");
+    expect(stateNone).toEqual("none");
+  });
+}); 
