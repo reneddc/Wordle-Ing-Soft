@@ -82,6 +82,31 @@ describe("VISTA MODALIDADES", () => {
   });
 });
 
+describe("VISTA REGISTRARSE COMO ADMINISTRADOR", () => {
+  beforeAll(() => {
+    document.body.innerHTML = fs.readFileSync("index.html", "utf8");
+    require("./presenter.js");
+  });
+
+  it("Borrar la pantalla principal y que muetre la vista de registrase como administrador", () => {
+    let vistaPantallaPrincipal = document.querySelector("#vista-Principal");
+    let vistaRegistrarseAdmin = document.querySelector("#vista-registro-admistrador");
+    let botonRegistrarseAdmin = document.querySelector("#boton-registrarse-admin");
+    let stateNone = vistaPantallaPrincipal.style.display;//antes del click
+    let stateBlock = vistaRegistrarseAdmin.style.display;//antes del click
+
+    expect(stateNone).toEqual("");
+    expect(stateBlock).toEqual("none");
+
+    botonRegistrarseAdmin.click();
+
+    stateNone = vistaPantallaPrincipal.style.display;//después del click
+    stateBlock = vistaRegistrarseAdmin.style.display;//después del click
+
+    expect(stateBlock).toEqual("block");
+    expect(stateNone).toEqual("none");
+  });
+}); 
 
 //____________________________________OTROS_______________________________________
 
@@ -138,22 +163,29 @@ describe("VISTA REGISTRARSE COMO ADMINISTRADOR", () => {
     require("./presenter.js");
   });
 
-  it("Borrar la pantalla principal y que muetre la vista de registrase como administrador", () => {
-    let vistaPantallaPrincipal = document.querySelector("#vista-Principal");
+  it("Borrar la vista de registrarse como admin y que muetre la vista banco de palabras", () => {
     let vistaRegistrarseAdmin = document.querySelector("#vista-registro-admistrador");
+    let vistaBancoPalabras = document.querySelector("#vista-banco-palabras");
     let botonRegistrarseAdmin = document.querySelector("#boton-registrarse-admin");
-    let stateNone = vistaPantallaPrincipal.style.display;//antes del click
-    let stateBlock = vistaRegistrarseAdmin.style.display;//antes del click
-
-    expect(stateNone).toEqual("");
-    expect(stateBlock).toEqual("none");
 
     botonRegistrarseAdmin.click();
 
-    stateNone = vistaPantallaPrincipal.style.display;//después del click
-    stateBlock = vistaRegistrarseAdmin.style.display;//después del click
+    let passwordAdmin =  document.querySelector("#password-admin");
+    let botonAceptarPassword = document.querySelector("#boton-aceptar-password");
 
-    expect(stateBlock).toEqual("block");
+    let stateNone = vistaRegistrarseAdmin.style.display;//antes del click
+    let stateBlock = vistaBancoPalabras.style.display;//antes del click
+
+    expect(stateNone).toEqual("block");
+    expect(stateBlock).toEqual("none");
+
+    passwordAdmin.value = "123";
+    botonAceptarPassword.click();
+
+    stateNone = vistaRegistrarseAdmin.style.display;//antes del click
+    stateBlock = vistaBancoPalabras.style.display;//antes del click
+
     expect(stateNone).toEqual("none");
+    expect(stateBlock).toEqual("block");
   });
 }); 
