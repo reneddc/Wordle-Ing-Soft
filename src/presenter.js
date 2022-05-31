@@ -49,6 +49,7 @@ const formCategoriaDeportes = document.querySelector("#juego-categoria-deporte")
 const formCategoriaUCB = document.querySelector("#juego-categoria-ucb");
 const formCategoriaSistemas = document.querySelector("#juego-categoria-sistemas");
 const formBotonPista = document.querySelector("#boton-pista");
+const formBotonVolver = document.querySelector("#boton-volver-form");
 
 //INPUTS
 
@@ -297,4 +298,17 @@ formBotonPista.addEventListener("submit", (event) => {
   let intentoPistaPosicion = document.querySelector(inputId);
   intentoPistaPosicion.value = pista;
   ocultarVista(botonPista);
+});
+
+formBotonVolver.addEventListener("submit", (event) => {
+  event.preventDefault();
+  ocultarVista(vistaBancoPalabras);
+  ocultarVista(vistaCampoJuego);
+  ocultarVista(vistaGanador);
+  ocultarVista(vistaModalidades);
+  ocultarVista(vistaPerdedor);
+  ocultarVista(vistaRegistrarseAdmin);
+  ocultarVista(vistaTutorial);
+  mostrarVista(vistaPantallaPrincipal);
+  navigator.style.display = "none";
 });
