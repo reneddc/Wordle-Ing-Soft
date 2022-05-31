@@ -1,5 +1,4 @@
-/*import fs from "fs";
-
+/*
 describe("Adivinar Palabra", () => {
   beforeAll(() => {
     document.body.innerHTML = fs.readFileSync("index.html", "utf8");
@@ -41,8 +40,8 @@ describe("Adivinar Palabra", () => {
     expect(resultado).toEqual("rgb(194, 192, 192)");
   });
 
-  /*afterEach(() => {
+  afterEach(() => {
     const resultado = document.querySelector("#resultado-div");
     resultado.innerHTML = "";
   });
-});*/
+});*/  

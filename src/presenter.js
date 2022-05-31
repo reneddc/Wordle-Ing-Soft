@@ -135,7 +135,6 @@ function jugarCategoria(categoriaJuego){
   wordle.definirPalabraSecreta(categoriaJuego);
   categoria = categoriaJuego;
   palabraSecreta = wordle.obtenerPalabraSecreta();
-  alert(palabraSecreta);
   tamPalabraSecreta = palabraSecreta.length;
   listaIntentos = wordle.obtenerHistorialIntentos();
   ocultarVista(vistaModalidades);
@@ -197,7 +196,6 @@ formReintentarPerdedorNuevaPalabra.addEventListener("submit", (event)=>{
   event.preventDefault();
   wordle.definirPalabraSecreta(categoria);
   palabraSecreta = wordle.obtenerPalabraSecreta();
-  alert(palabraSecreta);
   tamPalabraSecreta = palabraSecreta.length;
   listaIntentos = wordle.obtenerHistorialIntentos();
   ocultarVista(vistaPerdedor);
@@ -253,10 +251,6 @@ formNuevaPalabra.addEventListener("submit", (event) => {
   if(nuevaPalabraResp == nuevaPalabra.value){
     listaCategorias = ingresarCategorias();
     wordle.definirCategorias(listaCategorias);
-    alert(wordle.obtenerPalabrasSeleccionables());
-    alert(wordle.obtenerCategoriaDeporte());
-    alert(wordle.obtenerCategoriaUCB());
-    alert(wordle.obtenerCategoriaSistemas());
   }
   else{
     alert(nuevaPalabraResp);
