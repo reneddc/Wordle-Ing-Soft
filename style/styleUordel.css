@@ -31,7 +31,7 @@
 
 #navigator{
     align-items: center;
-    margin-left: 450px;
+    margin-left: 20px;
 }
 
 #titulo-navigator{
@@ -200,4 +200,14 @@ input[type="checkbox"]:checked{
 
 .titulo-modalidad{
     color: rgb(0, 74, 173);
+}
+
+#contenedor-navigator{
+    display: flex;
+    flex-direction: row;
+}
+
+#boton-volver-form{
+    margin-top: 20px;
+    margin-right: 160px;
 }
