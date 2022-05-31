@@ -9,24 +9,40 @@ describe("VISTAS", () => {
   });
 
   it("Borrar la pantalla principal y que muetre el campo de juego", () => {
-    const vistaPantallaPrincipal = document.querySelector("#vista-Principal");
-    const vistaCampoJuego = document.querySelector("#vista-campo-juego");
-    const botonJuegoRapido = document.querySelector("#boton-juego-rapido");
+    let vistaPantallaPrincipal = document.querySelector("#vista-Principal");
+    let vistaCampoJuego = document.querySelector("#vista-campo-juego");
+    let botonJuegoRapido = document.querySelector("#boton-juego-rapido");
 
     botonJuegoRapido.click();
 
-    const stateNone = vistaPantallaPrincipal.style.display;
-    const stateBlock = vistaCampoJuego.style.display;
+    let stateNone = vistaPantallaPrincipal.style.display;
+    let stateBlock = vistaCampoJuego.style.display;
 
     expect(stateNone).toEqual("none");
     expect(stateBlock).toEqual("block");
   });
 
+  it("Borrar la pantalla menu principal y que muestre tutorial", () => {
+    let vistaPantallaPrincipal = document.querySelector("#vista-Principal");
+    let vistaTutorial = document.querySelector("#vista-tutorial");
+    let botonTutorial = document.querySelector("#boton-tutorial");
+
+    botonTutorial.click();
+
+    let stateNone = vistaPantallaPrincipal.style.display;
+    let stateBlock = vistaTutorial.style.display;
+
+    expect(stateNone).toEqual("none");
+    expect(stateBlock).toEqual("block");
+  });
+
+ 
 });  
-
-
 
 
 //____________________________________ _______________________________________
 
 
+
+
+//<TEST UI> <Borrar la pantalla principal y que muetre el campo de juego>
