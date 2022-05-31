@@ -2,7 +2,7 @@ import fs from "fs";
 
 //____________________________________VISTAS_______________________________________
 
-/*describe("VISTAS", () => {
+/*describe("VISTA CAMPO DE JUEGO", () => {
   beforeAll(() => {
     document.body.innerHTML = fs.readFileSync("index.html", "utf8");
     require("./presenter.js");
@@ -28,7 +28,7 @@ import fs from "fs";
   });
 });  
 
-describe("VIST", () => {
+describe("VISTA TUTORIAL", () => {
   beforeAll(() => {
     document.body.innerHTML = fs.readFileSync("index.html", "utf8");
     require("./presenter.js");
@@ -54,19 +54,19 @@ describe("VIST", () => {
     expect(stateNone).toEqual("none");
     expect(stateBlock).toEqual("block");
   });
-});  */
+});  
 
 
 //____________________________________OTROS_______________________________________
 
 
-describe("VIST", () => {
+describe("CAMPO DE JUEGO AL INICIAR", () => {
   beforeAll(() => {
     document.body.innerHTML = fs.readFileSync("index.html", "utf8");
     require("./presenter.js");
   });
 
-  it("No se muestra ningun color si no se hizo un intento", () => {
+  it("Mostrar Inputs de ingreso de intento vacíos al iniciar la partida", () => {
     let botonJuegoRapido = document.querySelector("#boton-juego-rapido");
     botonJuegoRapido.click();
 
@@ -76,6 +76,32 @@ describe("VIST", () => {
     }
   });
 }); 
+*/
+describe("PRIMER INTENTO", () => {
+  beforeAll(() => {
+    document.body.innerHTML = fs.readFileSync("index.html", "utf8");
+    require("./presenter.js");
+  });
 
+  it("Mostrar en la primera fila del historial el intento ingresado", () => {
+    let botonJuegoRapido = document.querySelector("#boton-juego-rapido");
+    botonJuegoRapido.click();
 
-//<TEST UI> <Borrar la pantalla principal y que muetre el campo de juego>
+    const inputsIntento = document.querySelectorAll(".ingresar-intento");
+    const botonIngresarIntento = document.querySelector(".ingresar-palabra-boton");
+    const intento = "PALOS";
+    inputsIntento[0].value = intento[0];
+    inputsIntento[1].value = intento[1];
+    inputsIntento[2].value = intento[2];
+    inputsIntento[3].value = intento[3];
+    if(inputsIntento.length > 4){
+      inputsIntento[4].value = intento[4];
+    }
+
+    botonIngresarIntento.click();
+    const historialIntentos = document.querySelectorAll(".fila-1")
+    for(let i = 0; i < historialIntentos.length; i++){
+      expect(historialIntentos[i].value).toEqual(intento[i]);
+    }
+  });
+});
